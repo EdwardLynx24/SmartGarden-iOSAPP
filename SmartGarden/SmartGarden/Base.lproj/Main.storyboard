@@ -438,6 +438,7 @@
                         <outlet property="scrollView" destination="84z-9b-oVH" id="iIb-2J-bSN"/>
                         <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logOut" id="8o2-23-DxY"/>
                         <segue destination="fB3-9k-fyj" kind="show" identifier="addNewGarden" id="pQk-3A-EKT"/>
+                        <segue destination="VuX-ok-43a" kind="show" identifier="plantasSegue" id="ZKw-ls-xxh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nc8-tX-hmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -447,7 +448,7 @@
         <!--Plants View Controller-->
         <scene sceneID="COO-zv-a09">
             <objects>
-                <viewController id="VuX-ok-43a" customClass="PlantsViewController" customModule="SmartGarden" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="plantsStoryBoard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VuX-ok-43a" customClass="PlantsViewController" customModule="SmartGarden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xVB-uv-UY3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1744,7 +1745,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofO-9q-wS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3457.971014492754" y="492.85714285714283"/>
+            <point key="canvasLocation" x="3445" y="491"/>
         </scene>
         <!--Us View Controller-->
         <scene sceneID="qzC-7O-q9Z">
@@ -1888,10 +1889,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sK4-Lb-df5"/>
-        <segue reference="dBb-Pc-mj7"/>
-        <segue reference="pQk-3A-EKT"/>
-        <segue reference="7qc-XD-lHa"/>
+        <segue reference="EBp-7e-CeX"/>
         <segue reference="mEf-P6-gRf"/>
+        <segue reference="ZKw-ls-xxh"/>
         <segue reference="jyG-tY-Ft0"/>
         <segue reference="8o2-23-DxY"/>
     </inferredMetricsTieBreakers>

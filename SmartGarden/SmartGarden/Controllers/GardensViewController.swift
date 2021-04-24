@@ -18,8 +18,12 @@ class GardensViewController: UIViewController {
         self.performSegue(withIdentifier: "addNewGarden", sender: nil)
     }
     
-    @IBAction func goPlants(_ sender: Any) {
+    @IBAction func goPlants(_ sender: UIButton) {
         
+        /*let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let plantasView = storyboard.instantiateViewController(withIdentifier: "plantsStoryBoard") as! PlantsViewController
+        plantasView.gardenID = sender.tag*/
+        self.performSegue(withIdentifier: "plantasSegue", sender: sender)
     }
     
     
@@ -32,6 +36,18 @@ class GardensViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "plantasSegue" {
+            let destino = segue.destination as! PlantsViewController //ViewControllerB
+            if let button = sender as? UIButton{
+                destino.gardenID = button.tag
+            }
+        }
+    }
+    
     @IBAction func logOut(_ sender: Any){
         debugPrint("Presionado")
         let headersnot401: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)", "Accept":"aplication/json"]
@@ -48,6 +64,7 @@ class GardensViewController: UIViewController {
             }
         }
     }
+    
     func logedIn(){
         let headers: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)", "Accept":"application/json"]
         Alamofire.request("https://smart-garden-api-v12.herokuapp.com/loggedIn", method: .get, headers: headers).responseData{(response) in
@@ -67,7 +84,10 @@ class GardensViewController: UIViewController {
                 self.getStoredGardens(idde: userLog.id, completionHandler: { (gardens) in
                     gardens.forEach({ (jardines) in
                         let gardenButton = GardenButton(frame: CGRect(x: 20, y: positionY, width: width, height: height))
-                        gardenButton.configure(with: Button(gardenName: jardines.name, gardenLocation: jardines.location, gardenCreated: jardines.created_at))
+                        gardenButton.configure(with: Button(id: jardines.id ,gardenName: jardines.name, gardenLocation: jardines.location, gardenCreated: jardines.created_at))
+                        gardenButton.tag = jardines.id
+                        print(gardenButton.tag)
+                        gardenButton.addTarget(self, action: #selector(self.goPlants(_:)), for: .touchUpInside)
                         self.scrollView.addSubview(gardenButton)
                         positionY += height + spacing
                     })
@@ -92,5 +112,6 @@ class GardensViewController: UIViewController {
             }
         })
     }
+    
     
 }

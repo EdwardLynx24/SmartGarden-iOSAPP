@@ -11,7 +11,7 @@ import UIKit
 
 struct Button{
     
-    //let id:Int
+    let id:Int
     let gardenName: String
     let gardenLocation: String
     let gardenCreated: String

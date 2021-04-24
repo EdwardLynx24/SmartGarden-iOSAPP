@@ -19,6 +19,8 @@ class PlantsViewController: UIViewController {
     @IBOutlet weak var btn_new_plant: UIButton!
     @IBOutlet weak var btn_new_category: UIButton!
     
+    var gardenID:Int = 0
+    
     
     let headers:HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)","Accept":"aplication/json"]
     
@@ -26,7 +28,8 @@ class PlantsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         btn_new_plant.layer.cornerRadius = 15
-        btn_new_category.layer.cornerRadius = 15
+        //btn_new_category.layer.cornerRadius = 15
+        print("ID del jardin: \(self.gardenID)")
 
     }
     
