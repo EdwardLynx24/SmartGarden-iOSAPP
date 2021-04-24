@@ -18,6 +18,10 @@ class GardensViewController: UIViewController {
         self.performSegue(withIdentifier: "addNewGarden", sender: nil)
     }
     
+    @IBAction func goPlants(_ sender: Any) {
+        
+    }
+    
     
     let defaults = UserDefaults.standard
     override func viewDidLoad() {
@@ -58,6 +62,7 @@ class GardensViewController: UIViewController {
                 let height = 150
                 let spacing = 15
                 var positionY = 200
+                let heightS = 250
                 
                 self.getStoredGardens(idde: userLog.id, completionHandler: { (gardens) in
                     gardens.forEach({ (jardines) in
@@ -66,15 +71,14 @@ class GardensViewController: UIViewController {
                         self.scrollView.addSubview(gardenButton)
                         positionY += height + spacing
                     })
-                    self.scrollView.contentSize.height = CGFloat(gardens.count * (height + spacing))
+                    self.scrollView.contentSize = CGSize(width: 414, height: CGFloat(gardens.count * (heightS + spacing)))
                 })
             }catch{
                 print("Error \(error)")
             }
         }
     }
-            
-            
+    
     func getStoredGardens(idde:Int, completionHandler: @escaping([GardensSaved])->Void){
         Alamofire.request("https://smart-garden-api-v12.herokuapp.com/api/Garden/showByUser?id=\(idde)", method: .get).responseData(completionHandler: {(response) in
             guard let data = response.value else { return }

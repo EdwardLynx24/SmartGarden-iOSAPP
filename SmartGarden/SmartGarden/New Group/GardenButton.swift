@@ -10,12 +10,19 @@ import UIKit
 
 
 struct Button{
+    
+    //let id:Int
     let gardenName: String
     let gardenLocation: String
     let gardenCreated: String
 }
 
 final class GardenButton: UIButton {
+    
+    private let gardenID:Int = {
+        let GardenID:Int = 0
+        return GardenID
+    }()
     
     private let name: UILabel = {
         let lb_name = UILabel()
