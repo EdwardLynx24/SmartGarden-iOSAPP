@@ -10,7 +10,10 @@ import Foundation
 
 struct UserLogged: Codable{
     
-    let id: Int
-    let username: String
-    let state:Bool
+    
+    //static var shared = UserLogged()
+    
+    let id: Int //= 0
+    let username: String //= ""
+    let state:Bool //= false
 }

@@ -29,7 +29,6 @@
 		3E477725261AA9A9002AA368 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E47771E261AA9A9002AA368 /* profile.png */; };
 		3E6EFAA72628FAD4009A15A7 /* Gardens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFAA62628FAD4009A15A7 /* Gardens.swift */; };
 		3E6EFAA926290CA3009A15A7 /* NewGardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6EFAA826290CA3009A15A7 /* NewGardenViewController.swift */; };
-		3E6F0064262B8B1D00B79BB8 /* UIGardenStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F0063262B8B1D00B79BB8 /* UIGardenStack.swift */; };
 		3E9CF7C72625027600011AFF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9CF7C62625027600011AFF /* Extensions.swift */; };
 		3E9CF7CB26254DDA00011AFF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9CF7CA26254DDA00011AFF /* User.swift */; };
 		3E9F90C72625E57C00F9B9C3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9F90C62625E57C00F9B9C3 /* App.swift */; };
@@ -64,6 +63,7 @@
 		3EEC0C24262D223D00735137 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC0C23262D223D00735137 /* Plant.swift */; };
 		3EEC0C27262D22FC00735137 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC0C26262D22FC00735137 /* ScannerViewController.swift */; };
 		3EEC0C29262D230C00735137 /* GenerateQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC0C28262D230C00735137 /* GenerateQRViewController.swift */; };
+		3EF379F826338B0F0043141E /* GardenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF379F726338B0F0043141E /* GardenButton.swift */; };
 		3EF9CCCF261BC7A4001E6ABD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF9CCCE261BC7A4001E6ABD /* LoginViewController.swift */; };
 		3EF9CCD1261BC7DC001E6ABD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF9CCD0261BC7DC001E6ABD /* RegisterViewController.swift */; };
 		58785AA40FAB49B8E8141EE9 /* Pods_SmartGarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BDC880986605C116B4CFC3 /* Pods_SmartGarden.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -116,7 +116,6 @@
 		3E47771E261AA9A9002AA368 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		3E6EFAA62628FAD4009A15A7 /* Gardens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gardens.swift; sourceTree = "<group>"; };
 		3E6EFAA826290CA3009A15A7 /* NewGardenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGardenViewController.swift; sourceTree = "<group>"; };
-		3E6F0063262B8B1D00B79BB8 /* UIGardenStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIGardenStack.swift; path = ../UIGardenStack.swift; sourceTree = "<group>"; };
 		3E9CF7C62625027600011AFF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3E9CF7CA26254DDA00011AFF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E9F90C62625E57C00F9B9C3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -149,6 +148,7 @@
 		3EEC0C23262D223D00735137 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		3EEC0C26262D22FC00735137 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		3EEC0C28262D230C00735137 /* GenerateQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateQRViewController.swift; sourceTree = "<group>"; };
+		3EF379F726338B0F0043141E /* GardenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenButton.swift; sourceTree = "<group>"; };
 		3EF9CCCE261BC7A4001E6ABD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3EF9CCD0261BC7DC001E6ABD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		52BDC880986605C116B4CFC3 /* Pods_SmartGarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartGarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,7 +299,7 @@
 		3E6F0065262B8B2600B79BB8 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
-				3E6F0063262B8B1D00B79BB8 /* UIGardenStack.swift */,
+				3EF379F726338B0F0043141E /* GardenButton.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -340,19 +340,19 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		3EEC0C25262D22D200735137 /* New Group */ = {
+		3EEC0C25262D22D200735137 /* QR */ = {
 			isa = PBXGroup;
 			children = (
 				3EEC0C26262D22FC00735137 /* ScannerViewController.swift */,
 				3EEC0C28262D230C00735137 /* GenerateQRViewController.swift */,
 			);
-			path = "New Group";
+			path = QR;
 			sourceTree = "<group>";
 		};
 		3EF9CCCD261BC778001E6ABD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3EEC0C25262D22D200735137 /* New Group */,
+				3EEC0C25262D22D200735137 /* QR */,
 				3EF9CCCE261BC7A4001E6ABD /* LoginViewController.swift */,
 				3EF9CCD0261BC7DC001E6ABD /* RegisterViewController.swift */,
 				3EE8C449261CE191005E110E /* GardensViewController.swift */,
@@ -589,6 +589,7 @@
 				3E6EFAA72628FAD4009A15A7 /* Gardens.swift in Sources */,
 				3EF9CCCF261BC7A4001E6ABD /* LoginViewController.swift in Sources */,
 				3E4776DF261A944B002AA368 /* ViewController.swift in Sources */,
+				3EF379F826338B0F0043141E /* GardenButton.swift in Sources */,
 				3EEC0C1C262CCE8E00735137 /* UserForLog.swift in Sources */,
 				3EEC0C1E262CD49B00735137 /* ProfilePreviewViewController.swift in Sources */,
 				3EB74BC5261E613300AF0066 /* UsViewController.swift in Sources */,
@@ -600,7 +601,6 @@
 				3EB74BC7261E617C00AF0066 /* ProfileViewController.swift in Sources */,
 				3E9CF7CB26254DDA00011AFF /* User.swift in Sources */,
 				3EF9CCD1261BC7DC001E6ABD /* RegisterViewController.swift in Sources */,
-				3E6F0064262B8B1D00B79BB8 /* UIGardenStack.swift in Sources */,
 				3EEC0C29262D230C00735137 /* GenerateQRViewController.swift in Sources */,
 				3E9F90C9262610E200F9B9C3 /* Auth.swift in Sources */,
 			);

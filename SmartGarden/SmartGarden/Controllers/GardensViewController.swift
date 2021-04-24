@@ -10,9 +10,9 @@ import UIKit
 import Alamofire
 
 class GardensViewController: UIViewController {
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var btn_new: UIButton!
     
     @IBAction func new(_ sender: Any) {
         self.performSegue(withIdentifier: "addNewGarden", sender: nil)
@@ -22,6 +22,8 @@ class GardensViewController: UIViewController {
     let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
+        btn_new.layer.borderWidth = 1
+        btn_new.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         logedIn()
 
         // Do any additional setup after loading the view.
@@ -50,20 +52,21 @@ class GardensViewController: UIViewController {
                 let decoder = JSONDecoder()
                 let userLog = try decoder.decode(UserLogged.self, from: data)
                 
-                let height = 100
-                let spacing = 10
-                var positionY = 0
+                print("ID BRO:", userLog.id)
+                
+                let width = 375
+                let height = 150
+                let spacing = 15
+                var positionY = 200
                 
                 self.getStoredGardens(idde: userLog.id, completionHandler: { (gardens) in
                     gardens.forEach({ (jardines) in
-                        print(jardines.name)
-                        
-                        /*let gardenStack = UIGardenStack(frame: CGRect(x: 0, y: positionY, width: Int(self.stackView.frame.width), height: height))
-                        gardenStack.buildGarden(jardines)
-                        self.scrollView.addSubview(gardenStack)
-                        positionY += height + spacing*/
+                        let gardenButton = GardenButton(frame: CGRect(x: 20, y: positionY, width: width, height: height))
+                        gardenButton.configure(with: Button(gardenName: jardines.name, gardenLocation: jardines.location, gardenCreated: jardines.created_at))
+                        self.scrollView.addSubview(gardenButton)
+                        positionY += height + spacing
                     })
-                    //self.scrollView.contentSize.height = CGFloat(5 * (height + spacing))
+                    self.scrollView.contentSize.height = CGFloat(gardens.count * (height + spacing))
                 })
             }catch{
                 print("Error \(error)")
@@ -73,7 +76,7 @@ class GardensViewController: UIViewController {
             
             
     func getStoredGardens(idde:Int, completionHandler: @escaping([GardensSaved])->Void){
-        Alamofire.request("https://smart-garden-api-v12.herokuapp.com/api/Garden/showByUser?id=4", method: .get).responseData(completionHandler: {(response) in
+        Alamofire.request("https://smart-garden-api-v12.herokuapp.com/api/Garden/showByUser?id=\(idde)", method: .get).responseData(completionHandler: {(response) in
             guard let data = response.value else { return }
             do{
                 print("xcosa", idde)
@@ -85,4 +88,5 @@ class GardensViewController: UIViewController {
             }
         })
     }
+    
 }

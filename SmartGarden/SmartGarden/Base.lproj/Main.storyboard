@@ -372,17 +372,37 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84z-9b-oVH">
                                 <rect key="frame" x="0.0" y="185" width="414" height="711"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gcT-te-OW1">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="711"/>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Si-Gl-sDA">
+                                        <rect key="frame" x="20" y="30" width="374" height="150"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="5xK-Db-qfV"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="mjn-Ak-5nz"/>
+                                        </constraints>
+                                        <state key="normal" title="Nuevo Jardin">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWith">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="new:" destination="wmQ-6S-SoS" eventType="touchUpInside" id="17a-F6-owE"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="gcT-te-OW1" secondAttribute="bottom" id="93r-7r-deC"/>
-                                    <constraint firstItem="gcT-te-OW1" firstAttribute="leading" secondItem="84z-9b-oVH" secondAttribute="leading" id="QAb-aJ-ui6"/>
-                                    <constraint firstItem="gcT-te-OW1" firstAttribute="width" secondItem="84z-9b-oVH" secondAttribute="width" id="ax8-zJ-qRd"/>
-                                    <constraint firstItem="gcT-te-OW1" firstAttribute="top" secondItem="84z-9b-oVH" secondAttribute="top" id="eni-gz-qbG"/>
-                                    <constraint firstItem="gcT-te-OW1" firstAttribute="height" secondItem="84z-9b-oVH" secondAttribute="height" id="pTQ-oX-ecd"/>
-                                    <constraint firstAttribute="trailing" secondItem="gcT-te-OW1" secondAttribute="trailing" id="sNH-S2-UbU"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Si-Gl-sDA" secondAttribute="bottom" constant="531" id="GbP-jV-Jrc"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Si-Gl-sDA" secondAttribute="trailing" constant="20" id="a20-n3-way"/>
+                                    <constraint firstItem="4Si-Gl-sDA" firstAttribute="leading" secondItem="84z-9b-oVH" secondAttribute="leading" constant="20" id="dgW-Jx-HhP"/>
+                                    <constraint firstItem="4Si-Gl-sDA" firstAttribute="top" secondItem="84z-9b-oVH" secondAttribute="top" constant="30" id="wFX-XD-Ov4"/>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1e-w4-uEL">
@@ -402,6 +422,7 @@
                             <constraint firstItem="j1e-w4-uEL" firstAttribute="leading" secondItem="wLf-HO-XdV" secondAttribute="leading" constant="20" id="Bcc-Y1-I0E"/>
                             <constraint firstItem="84z-9b-oVH" firstAttribute="top" secondItem="j1e-w4-uEL" secondAttribute="bottom" constant="16" id="NvG-ow-Vi7"/>
                             <constraint firstItem="SS9-eP-c7t" firstAttribute="top" secondItem="wLf-HO-XdV" secondAttribute="top" constant="30" id="O0L-gC-NEB"/>
+                            <constraint firstItem="wLf-HO-XdV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="j1e-w4-uEL" secondAttribute="trailing" symbolic="YES" id="OmK-he-QGX"/>
                             <constraint firstItem="84z-9b-oVH" firstAttribute="leading" secondItem="FKb-Bd-Xjy" secondAttribute="leading" id="aty-XR-Reh"/>
                             <constraint firstAttribute="bottom" secondItem="84z-9b-oVH" secondAttribute="bottom" id="fAZ-vJ-r8J"/>
                             <constraint firstItem="wLf-HO-XdV" firstAttribute="trailing" secondItem="2pq-oo-7r7" secondAttribute="trailing" constant="30" id="ipV-74-1wW"/>
@@ -413,8 +434,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="OL9-gC-VhE"/>
                     <connections>
+                        <outlet property="btn_new" destination="4Si-Gl-sDA" id="2lo-S2-8u6"/>
                         <outlet property="scrollView" destination="84z-9b-oVH" id="iIb-2J-bSN"/>
-                        <outlet property="stackView" destination="gcT-te-OW1" id="6Jc-xW-S9k"/>
                         <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logOut" id="8o2-23-DxY"/>
                         <segue destination="fB3-9k-fyj" kind="show" identifier="addNewGarden" id="pQk-3A-EKT"/>
                     </connections>
@@ -1867,7 +1888,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sK4-Lb-df5"/>
-        <segue reference="rVs-8G-AnL"/>
+        <segue reference="dBb-Pc-mj7"/>
         <segue reference="pQk-3A-EKT"/>
         <segue reference="7qc-XD-lHa"/>
         <segue reference="mEf-P6-gRf"/>
