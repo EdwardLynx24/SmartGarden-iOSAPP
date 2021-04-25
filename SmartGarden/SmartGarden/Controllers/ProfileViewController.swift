@@ -26,18 +26,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func updateProfile(_ sender: Any) {
-        let nombre = txf_name.text!
-        let apellido = txf_lastName.text!
-        let email = txf_email.text!
         
-        if nombre.isEmpty || apellido.isEmpty || email.isEmpty{
-            let alertEmptyData = UIAlertController(title: "Campos vacios", message: "Porfavor rellena los campos", preferredStyle: .alert)
-            alertEmptyData.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(alertAction) in
-                alertEmptyData.dismiss(animated: true, completion: nil)
-            }))
-            self.present(alertEmptyData, animated: true, completion: nil)
-            
-        }else{
             Alamofire.request("https://smart-garden-api-v12.herokuapp.com/loggedIn", method: .get, headers: headers).responseData{(response) in
                 guard let data = response.value else { return }
                 do{
@@ -50,21 +39,33 @@ class ProfileViewController: UIViewController {
                 }
             }
         }
-    }
     
     func updateUser(id: Int,nameS:String,lastNameS:String,emailS:String){
         
-        let nombreUP = txf_name.text
-        let apellidoUP = txf_lastName.text
-        let emailUP = txf_email.text
+        let nombreUP = txf_name.text!
+        let apellidoUP = txf_lastName.text!
+        let emailUP = txf_email.text!
         
-        print("Tengo el ID: \(id)")
-        print(nameS,lastNameS,emailS)
-        Alamofire.request("https://smart-garden-api-v12.herokuapp.com/update", method: .put, parameters: ["id":id,"name":nombreUP ?? nameS,"lastName":apellidoUP ?? lastNameS,"email":emailUP ?? emailS], encoding: JSONEncoding.default, headers: headers).responseJSON{(response) in
-            if let JSON = response.result.value{
-                print(JSON)
-            }else{
-                print("Error: No se armo ")
+        if nombreUP.isEmpty && apellidoUP.isEmpty{
+            Alamofire.request("https://smart-garden-api-v12.herokuapp.com/update", method: .put, parameters: ["id":id, "email":emailUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                print(response)
+            }
+        }
+        else if nombreUP.isEmpty && emailUP.isEmpty{
+            Alamofire.request("https://smart-garden-api-v12.herokuapp.com/update", method: .put, parameters: ["id":id, "lastName":apellidoUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                print(response)
+            }
+        }else if apellidoUP.isEmpty && emailUP.isEmpty{
+            Alamofire.request("https://smart-garden-api-v12.herokuapp.com/update", method: .put, parameters: ["id":id, "name":nombreUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                print(response)
+            }
+        }else if emailUP.isEmpty{
+            Alamofire.request("https://smart-garden-api-v12.herokuapp.com/update", method: .put, parameters: ["id":id, "name":nombreUP,"lastName":apellidoUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                print(response)
+            }
+        }else{
+            Alamofire.request("https://smart-garden-api-v12.herokuapp.com/update", method: .put, parameters: ["id":id, "name":nombreUP,"lastName":apellidoUP,"email":emailUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                print(response)
             }
         }
     }

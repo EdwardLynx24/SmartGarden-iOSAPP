@@ -30,19 +30,26 @@ class PlantsViewController: UIViewController {
         btn_new_plant.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         buildButton()
     }
+    @IBAction func addNewPlant(_ sender: Any) {
+        //self.performSegue(withIdentifier: "addPlant", sender: nil)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         if segue.identifier == "plantData" {
-            let destino = segue.destination as! PlantDataViewController //ViewControllerB
+            let destino = segue.destination as! PlantDataViewController
             if let button = sender as? UIButton{
                 destino.plantID = button.tag
             }
+        }else if segue.identifier == "addPlant"{
+            let destino = segue.destination as! NewPlant_CategoryViewController
+            destino.gardenID = self.gardenID
         }
     }
     
     func getStoredPlants(completionHandler: @escaping([Planta])->Void){
+        
+        print("Bob me llamo compi")
+        print("Che mugrero \(self.gardenID)")
         Alamofire.request("https://smart-garden-api-v12.herokuapp.com/api/Flowerpot/showByGarden?garden=\(self.gardenID)", method: .get).responseData(completionHandler: {(response) in
             guard let data = response.value else { return }
             do{
@@ -56,6 +63,8 @@ class PlantsViewController: UIViewController {
     }
     
     func buildButton(){
+        
+        print("Si jala we, soy bob el constructor")
         
         let width = 375
         let height = 150
