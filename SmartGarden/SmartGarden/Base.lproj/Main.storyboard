@@ -703,7 +703,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zE-lP-762" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4959" y="491"/>
+            <point key="canvasLocation" x="4925" y="-192"/>
         </scene>
         <!--New Sensor View Controller-->
         <scene sceneID="oNU-l5-nqK">
@@ -813,10 +813,10 @@
             </objects>
             <point key="canvasLocation" x="7175" y="-221"/>
         </scene>
-        <!--View Controller-->
+        <!--Plant Data View Controller-->
         <scene sceneID="1r3-7X-jnm">
             <objects>
-                <viewController id="4nF-Nu-4dN" sceneMemberID="viewController">
+                <viewController id="4nF-Nu-4dN" customClass="PlantDataViewController" customModule="SmartGarden" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hNJ-c2-QHW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1078,6 +1078,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gu5-S9-TON"/>
                     </view>
+                    <connections>
+                        <outlet property="lb_plantName" destination="6KG-bb-iZz" id="BHo-Bx-hQ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="331-qU-Aty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1851,7 +1854,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7M-WB-QvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5670" y="1222"/>
+            <point key="canvasLocation" x="5957" y="1221"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uul-z2-Gmo">
@@ -1918,8 +1921,8 @@
         <segue reference="Iyr-b3-DGt"/>
         <segue reference="t14-T5-AbX"/>
         <segue reference="r7X-w4-8de"/>
-        <segue reference="2hY-f8-khe"/>
+        <segue reference="q9K-3b-ved"/>
         <segue reference="jyG-tY-Ft0"/>
-        <segue reference="8o2-23-DxY"/>
+        <segue reference="tbE-A9-b4F"/>
     </inferredMetricsTieBreakers>
 </document>

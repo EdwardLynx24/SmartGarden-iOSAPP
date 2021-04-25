@@ -38,6 +38,7 @@
 		3EA3C7ED2628A5FB00C759F5 /* UserLogged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA3C7EC2628A5FB00C759F5 /* UserLogged.swift */; };
 		3EB74BC5261E613300AF0066 /* UsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB74BC4261E613300AF0066 /* UsViewController.swift */; };
 		3EB74BC7261E617C00AF0066 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB74BC6261E617C00AF0066 /* ProfileViewController.swift */; };
+		3EBE029D2635C0FB008BE901 /* ShowedPlant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBE029C2635C0FB008BE901 /* ShowedPlant.swift */; };
 		3EC31E0A261FBA920004510B /* filter-512 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC31E09261FBA910004510B /* filter-512 3.png */; };
 		3EC91AD4261D291F00B5A490 /* e_Nexus_logo 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC91AD3261D291F00B5A490 /* e_Nexus_logo 1.png */; };
 		3ECB0831261EA035009DA834 /* maceta 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB082F261EA034009DA834 /* maceta 1.png */; };
@@ -66,6 +67,7 @@
 		3EF379F826338B0F0043141E /* GardenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF379F726338B0F0043141E /* GardenButton.swift */; };
 		3EF5AA4B2634BD13006B2B04 /* NewPlant&CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5AA4A2634BD13006B2B04 /* NewPlant&CategoryViewController.swift */; };
 		3EF5AA4F2634BFE1006B2B04 /* PlantsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5AA4E2634BFE1006B2B04 /* PlantsButton.swift */; };
+		3EF5AA512635BA63006B2B04 /* PlantDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5AA502635BA63006B2B04 /* PlantDataViewController.swift */; };
 		3EF9CCCF261BC7A4001E6ABD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF9CCCE261BC7A4001E6ABD /* LoginViewController.swift */; };
 		3EF9CCD1261BC7DC001E6ABD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF9CCD0261BC7DC001E6ABD /* RegisterViewController.swift */; };
 		58785AA40FAB49B8E8141EE9 /* Pods_SmartGarden.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BDC880986605C116B4CFC3 /* Pods_SmartGarden.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -127,6 +129,7 @@
 		3EA3C7EC2628A5FB00C759F5 /* UserLogged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogged.swift; sourceTree = "<group>"; };
 		3EB74BC4261E613300AF0066 /* UsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsViewController.swift; sourceTree = "<group>"; };
 		3EB74BC6261E617C00AF0066 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3EBE029C2635C0FB008BE901 /* ShowedPlant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowedPlant.swift; sourceTree = "<group>"; };
 		3EC31E09261FBA910004510B /* filter-512 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter-512 3.png"; sourceTree = "<group>"; };
 		3EC91AD3261D291F00B5A490 /* e_Nexus_logo 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "e_Nexus_logo 1.png"; path = "../../../Resources/e_Nexus_logo 1.png"; sourceTree = "<group>"; };
 		3ECB082F261EA034009DA834 /* maceta 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "maceta 1.png"; path = "../../../App_Design_Copy/maceta 1.png"; sourceTree = "<group>"; };
@@ -153,6 +156,7 @@
 		3EF379F726338B0F0043141E /* GardenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenButton.swift; sourceTree = "<group>"; };
 		3EF5AA4A2634BD13006B2B04 /* NewPlant&CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewPlant&CategoryViewController.swift"; sourceTree = "<group>"; };
 		3EF5AA4E2634BFE1006B2B04 /* PlantsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsButton.swift; sourceTree = "<group>"; };
+		3EF5AA502635BA63006B2B04 /* PlantDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDataViewController.swift; sourceTree = "<group>"; };
 		3EF9CCCE261BC7A4001E6ABD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3EF9CCD0261BC7DC001E6ABD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		52BDC880986605C116B4CFC3 /* Pods_SmartGarden.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartGarden.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -329,6 +333,7 @@
 				3EEC0C1B262CCE8E00735137 /* UserForLog.swift */,
 				3EEC0C1F262D1AAE00735137 /* Sensor.swift */,
 				3EEC0C23262D223D00735137 /* Plant.swift */,
+				3EBE029C2635C0FB008BE901 /* ShowedPlant.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 				3EEC0C1D262CD49B00735137 /* ProfilePreviewViewController.swift */,
 				3EEC0C21262D1D0F00735137 /* NewSensorViewController.swift */,
 				3EF5AA4A2634BD13006B2B04 /* NewPlant&CategoryViewController.swift */,
+				3EF5AA502635BA63006B2B04 /* PlantDataViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -602,12 +608,14 @@
 				3EB74BC5261E613300AF0066 /* UsViewController.swift in Sources */,
 				3E4776DD261A944A002AA368 /* AppDelegate.swift in Sources */,
 				3EE8C44E261D15AF005E110E /* PlantsViewController.swift in Sources */,
+				3EBE029D2635C0FB008BE901 /* ShowedPlant.swift in Sources */,
 				3EA3C7ED2628A5FB00C759F5 /* UserLogged.swift in Sources */,
 				3EEC0C27262D22FC00735137 /* ScannerViewController.swift in Sources */,
 				3EA3C7E92626792F00C759F5 /* HTTPRequests.swift in Sources */,
 				3EF5AA4B2634BD13006B2B04 /* NewPlant&CategoryViewController.swift in Sources */,
 				3EB74BC7261E617C00AF0066 /* ProfileViewController.swift in Sources */,
 				3E9CF7CB26254DDA00011AFF /* User.swift in Sources */,
+				3EF5AA512635BA63006B2B04 /* PlantDataViewController.swift in Sources */,
 				3EF9CCD1261BC7DC001E6ABD /* RegisterViewController.swift in Sources */,
 				3EEC0C29262D230C00735137 /* GenerateQRViewController.swift in Sources */,
 				3E9F90C9262610E200F9B9C3 /* Auth.swift in Sources */,

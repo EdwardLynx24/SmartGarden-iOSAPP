@@ -19,10 +19,6 @@ class GardensViewController: UIViewController {
     }
     
     @IBAction func goPlants(_ sender: UIButton) {
-        
-        /*let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let plantasView = storyboard.instantiateViewController(withIdentifier: "plantsStoryBoard") as! PlantsViewController
-        plantasView.gardenID = sender.tag*/
         self.performSegue(withIdentifier: "plantasSegue", sender: sender)
     }
     

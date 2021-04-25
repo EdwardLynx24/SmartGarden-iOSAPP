@@ -19,6 +19,9 @@ class PlantsViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     let headers:HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)","Accept":"aplication/json"]
     
+    @IBAction func goPlantData(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "plantData", sender: sender)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,17 @@ class PlantsViewController: UIViewController {
         btn_new_plant.layer.borderWidth = 1
         btn_new_plant.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         buildButton()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "plantData" {
+            let destino = segue.destination as! PlantDataViewController //ViewControllerB
+            if let button = sender as? UIButton{
+                destino.plantID = button.tag
+            }
+        }
     }
     
     func getStoredPlants(completionHandler: @escaping([Planta])->Void){
@@ -54,6 +68,8 @@ class PlantsViewController: UIViewController {
                 
                 let plantsButton = PlantsButton(frame: CGRect(x: 20, y: positionY, width: width, height: height))
                 plantsButton.configure(with: ButtonPlant(id: plantas.id, plantname:"Nombre:"+plantas.name, plantspice: "Especie: "+plantas.spice))
+                plantsButton.tag = plantas.id
+                plantsButton.addTarget(self, action: #selector(self.goPlantData(_:)), for: .touchUpInside)
                 self.scrollView.addSubview(plantsButton)
                 positionY += height + spacing
             })

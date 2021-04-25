@@ -19,6 +19,8 @@ class NewPlant_CategoryViewController: UIViewController {
     @IBOutlet weak var txf_categoryName: UITextField!
     @IBOutlet weak var txf_categoryWeather: UITextField!
     
+    var gardenID:Int = 0
+    
     let headers: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)","Accept":"aplication/json"]
     
     override func viewDidLoad() {
