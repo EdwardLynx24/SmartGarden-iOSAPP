@@ -555,6 +555,7 @@
                     <connections>
                         <outlet property="btn_new_plant" destination="d7q-tW-P8b" id="48J-iv-lCU"/>
                         <outlet property="scrollView" destination="HeF-TI-2cD" id="Pya-RI-m01"/>
+                        <segue destination="4nF-Nu-4dN" kind="show" identifier="plantData" id="t14-T5-AbX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6B-Lc-oPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1913,9 +1914,9 @@
         <image name="termometro 1.png" width="63" height="63"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sK4-Lb-df5"/>
         <segue reference="EBp-7e-CeX"/>
         <segue reference="Iyr-b3-DGt"/>
+        <segue reference="t14-T5-AbX"/>
         <segue reference="r7X-w4-8de"/>
         <segue reference="2hY-f8-khe"/>
         <segue reference="jyG-tY-Ft0"/>
