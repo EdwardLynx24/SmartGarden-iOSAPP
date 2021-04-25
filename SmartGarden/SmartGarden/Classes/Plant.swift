@@ -10,9 +10,10 @@ import Foundation
 
 struct Planta: Codable{
     
+    var id:Int
     var name: String
     var spice: String
     var garden: Int
-    var category: String
+    var category: Int
     
 }

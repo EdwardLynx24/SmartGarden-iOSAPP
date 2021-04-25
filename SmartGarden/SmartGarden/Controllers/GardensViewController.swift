@@ -84,7 +84,7 @@ class GardensViewController: UIViewController {
                 self.getStoredGardens(idde: userLog.id, completionHandler: { (gardens) in
                     gardens.forEach({ (jardines) in
                         let gardenButton = GardenButton(frame: CGRect(x: 20, y: positionY, width: width, height: height))
-                        gardenButton.configure(with: Button(id: jardines.id ,gardenName: jardines.name, gardenLocation: jardines.location, gardenCreated: jardines.created_at))
+                        gardenButton.configure(with: Button(id: jardines.id ,gardenName: "Nombre: "+jardines.name, gardenLocation: "Ubicación: "+jardines.location, gardenCreated: jardines.created_at))
                         gardenButton.tag = jardines.id
                         print(gardenButton.tag)
                         gardenButton.addTarget(self, action: #selector(self.goPlants(_:)), for: .touchUpInside)

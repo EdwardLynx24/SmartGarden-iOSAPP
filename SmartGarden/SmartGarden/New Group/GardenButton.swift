@@ -84,7 +84,5 @@ final class GardenButton: UIButton {
         super.layoutSubviews()
         name.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height/2)
         location.frame = CGRect(x: 15, y: frame.size.height/2, width: frame.size.width, height: frame.size.height/2)
-        //created_at.frame = CGRect(x: 0, y: frame.size.height/2, width: frame.size.width, height: frame.size.height/2)
     }
-
 }
