@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
         self.verify()
     }
     @IBAction func pushRegister(_ sender: Any) {
-        self.performSegue(withIdentifier: "GoToRegister", sender: nil)
+        //self.performSegue(withIdentifier: "GoToRegister", sender: nil)
     }
     func verify(){
         let txfmail = txf_mail.text!
