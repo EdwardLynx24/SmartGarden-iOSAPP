@@ -77,7 +77,7 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     }
     func wsConector(){
         
-        var request = URLRequest(url: URL(string: "ws://api-smart-garden.herokuapp.com")!)
+        var request = URLRequest(url: URL(string: "ws://api-smart-garden.herokuapp.com/")!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self
@@ -135,7 +135,7 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     
     
     func getPlantData(){
-        Alamofire.request("https://api-smart-garden.herokuapp.com//api/Flowerpot/show?id=\(self.plantID)", method: .get, headers: headers).responseData { (response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/api/Flowerpot/show?id=\(self.plantID)", method: .get, headers: headers).responseData { (response) in
             guard let data = response.value else { return }
             do{
                 let decoder = JSONDecoder()

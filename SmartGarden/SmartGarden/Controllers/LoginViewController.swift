@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
         }
 //Datos de login correctos
         else{
-            Alamofire.request("https://api-smart-garden.herokuapp.com//login", method: .post, parameters: ["email":txfmail,"password":txfpass]).responseData { (response) in
+            Alamofire.request("https://api-smart-garden.herokuapp.com/login", method: .post, parameters: ["email":txfmail,"password":txfpass]).responseData { (response) in
                 do {
                     guard let data = response.value else { return }
                     let decoder = JSONDecoder()

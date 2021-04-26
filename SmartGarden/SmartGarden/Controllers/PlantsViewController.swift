@@ -37,7 +37,7 @@ class PlantsViewController: UIViewController {
     @IBAction func logout(_ sender: Any) {
         
         let headersnot401: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)", "Accept":"aplication/json"]
-        Alamofire.request("https://api-smart-garden.herokuapp.com//logout", method: .post, parameters: ["Authentication":App.shared.tokensaved],headers: headersnot401).responseJSON{(response) -> Void in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/logout", method: .post, parameters: ["Authentication":App.shared.tokensaved],headers: headersnot401).responseJSON{(response) -> Void in
             print(response)
             if let JSON = response.request?.value{
                 self.performSegue(withIdentifier: "logOut", sender: nil)
@@ -68,7 +68,7 @@ class PlantsViewController: UIViewController {
         
         print("Bob me llamo compi")
         print("Che mugrero \(self.gardenID)")
-        Alamofire.request("https://api-smart-garden.herokuapp.com//api/Flowerpot/showByGarden?garden=\(self.gardenID)", method: .get).responseData(completionHandler: {(response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/api/Flowerpot/showByGarden?garden=\(self.gardenID)", method: .get).responseData(completionHandler: {(response) in
             guard let data = response.value else { return }
             do{
                 let decoder = try JSONDecoder().decode([Planta].self , from: data)

@@ -89,7 +89,7 @@ class RegisterViewController: UIViewController {
         let txfMail = txf_mail.text!
         let txfPass = txf_pass.text!
         
-        Alamofire.request("https://api-smart-garden.herokuapp.com//register", method: .post, parameters: ["name":txfName,"lastName":txfLastName,"email":txfMail,"password":txfPass], encoding: JSONEncoding.default).responseJSON { (response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/register", method: .post, parameters: ["name":txfName,"lastName":txfLastName,"email":txfMail,"password":txfPass], encoding: JSONEncoding.default).responseJSON { (response) in
             self.performSegue(withIdentifier: "RegisterSuccessfull", sender: nil)
         }
     }

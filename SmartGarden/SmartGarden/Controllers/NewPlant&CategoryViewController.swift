@@ -57,7 +57,7 @@ class NewPlant_CategoryViewController: UIViewController {
             }))
             self.present(alertEmptyData, animated: true, completion: nil)
         }else{
-            Alamofire.request("https://api-smart-garden.herokuapp.com//api/newFlowerpot", method: .post, parameters: ["name":name, "spice":spice,"garden":gardenID,"category":category], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            Alamofire.request("https://api-smart-garden.herokuapp.com/api/newFlowerpot", method: .post, parameters: ["name":name, "spice":spice,"garden":gardenID,"category":category], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                 if let JSON = response.result.value{
                     print(JSON)
                     self.performSegue(withIdentifier: "plantAdded", sender: nil)
@@ -80,7 +80,7 @@ class NewPlant_CategoryViewController: UIViewController {
             }))
             self.present(alertEmptyData, animated: true, completion: nil)
         }else{
-            Alamofire.request("https://api-smart-garden.herokuapp.com//api/newCategory", method: .post, parameters: ["name":name,"cimate":weather], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            Alamofire.request("https://api-smart-garden.herokuapp.com/api/newCategory", method: .post, parameters: ["name":name,"cimate":weather], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                 if let JSON = response.result.value{
                     print(JSON)
                 }

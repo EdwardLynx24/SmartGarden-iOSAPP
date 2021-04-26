@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController {
     
     @IBAction func updateProfile(_ sender: Any) {
         
-            Alamofire.request("https://api-smart-garden.herokuapp.com//loggedIn", method: .get, headers: headers).responseData{(response) in
+            Alamofire.request("https://api-smart-garden.herokuapp.com/loggedIn", method: .get, headers: headers).responseData{(response) in
                 guard let data = response.value else { return }
                 do{
                     let decoder = JSONDecoder()
@@ -51,7 +51,7 @@ class ProfileViewController: UIViewController {
             let state = self.isValidEmail(emailUP)
             
             if state == true{
-                Alamofire.request("https://api-smart-garden.herokuapp.com//update", method: .put, parameters: ["id":id, "email":emailUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                Alamofire.request("https://api-smart-garden.herokuapp.com/update", method: .put, parameters: ["id":id, "email":emailUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                     print(response)
                 }
             }else{
@@ -64,21 +64,21 @@ class ProfileViewController: UIViewController {
         }
             
         else if nombreUP.isEmpty && emailUP.isEmpty{
-            Alamofire.request("https://api-smart-garden.herokuapp.com//update", method: .put, parameters: ["id":id, "lastName":apellidoUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            Alamofire.request("https://api-smart-garden.herokuapp.com/update", method: .put, parameters: ["id":id, "lastName":apellidoUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                 print(response)
             }
         }else if apellidoUP.isEmpty && emailUP.isEmpty{
-            Alamofire.request("https://api-smart-garden.herokuapp.com//update", method: .put, parameters: ["id":id, "name":nombreUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            Alamofire.request("https://api-smart-garden.herokuapp.com/update", method: .put, parameters: ["id":id, "name":nombreUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                 print(response)
             }
         }else if emailUP.isEmpty{
-            Alamofire.request("https://api-smart-garden.herokuapp.com//update", method: .put, parameters: ["id":id, "name":nombreUP,"lastName":apellidoUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            Alamofire.request("https://api-smart-garden.herokuapp.com/update", method: .put, parameters: ["id":id, "name":nombreUP,"lastName":apellidoUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                 print(response)
             }
         }else{
             let state = self.isValidEmail(emailUP)
             if state == true{
-                Alamofire.request("https://api-smart-garden.herokuapp.com//update", method: .put, parameters: ["id":id, "name":nombreUP,"lastName":apellidoUP,"email":emailUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                Alamofire.request("https://api-smart-garden.herokuapp.com/update", method: .put, parameters: ["id":id, "name":nombreUP,"lastName":apellidoUP,"email":emailUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                     print(response)
                 }
             }else{
@@ -92,7 +92,7 @@ class ProfileViewController: UIViewController {
     }
     
     func getUserID(id: Int){
-        Alamofire.request("https://api-smart-garden.herokuapp.com//getUser/\(id)", method: .get, headers: headers).responseData { (response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/getUser/\(id)", method: .get, headers: headers).responseData { (response) in
             guard let data = response.value else { return }
             do{
                 let decoder = try JSONDecoder().decode(UserForLog.self, from: data)
@@ -103,7 +103,7 @@ class ProfileViewController: UIViewController {
         }
     }
     func loggedIn(){
-        Alamofire.request("https://api-smart-garden.herokuapp.com//loggedIn", method: .get, headers: headers).responseData{(response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/loggedIn", method: .get, headers: headers).responseData{(response) in
             guard let data = response.value else { return }
             do{
                 let decoder = JSONDecoder()
@@ -115,7 +115,7 @@ class ProfileViewController: UIViewController {
         }
     }
     func deleteProfileID(idD:Int){
-        Alamofire.request("https://api-smart-garden.herokuapp.com//delete", method: .delete, parameters: ["id":idD], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/delete", method: .delete, parameters: ["id":idD], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             if let JSON = response.result.value{
                 print(JSON)
                 self.performSegue(withIdentifier: "profileDeleted", sender: nil)

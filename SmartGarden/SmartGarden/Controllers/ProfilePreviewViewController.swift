@@ -22,7 +22,7 @@ class ProfilePreviewViewController: UIViewController {
         self.loggedIn()
     }
     func loggedIn(){
-        Alamofire.request("https://api-smart-garden.herokuapp.com//loggedIn", method: .get, headers: headers).responseData{(response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/loggedIn", method: .get, headers: headers).responseData{(response) in
             guard let data = response.value else { return }
             do{
                 let decoder = JSONDecoder()
