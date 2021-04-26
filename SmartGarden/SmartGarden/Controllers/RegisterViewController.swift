@@ -4,7 +4,7 @@
 //
 //  Created by Eduardo Maldonado on 05/04/21.
 //  Copyright © 2021 E-Nexus. All rights reserved.
-//
+//https://api-smart-garden.herokuapp.com/
 
 import UIKit
 import Alamofire
@@ -89,7 +89,7 @@ class RegisterViewController: UIViewController {
         let txfMail = txf_mail.text!
         let txfPass = txf_pass.text!
         
-        Alamofire.request("https://smart-garden-api-v12.herokuapp.com/register", method: .post, parameters: ["name":txfName,"lastName":txfLastName,"email":txfMail,"password":txfPass], encoding: JSONEncoding.default).responseJSON { (response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com//register", method: .post, parameters: ["name":txfName,"lastName":txfLastName,"email":txfMail,"password":txfPass], encoding: JSONEncoding.default).responseJSON { (response) in
             self.performSegue(withIdentifier: "RegisterSuccessfull", sender: nil)
         }
     }

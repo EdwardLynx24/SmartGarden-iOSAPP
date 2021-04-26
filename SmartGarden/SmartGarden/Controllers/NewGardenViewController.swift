@@ -39,7 +39,7 @@ class NewGardenViewController: UIViewController {
             }))
             self.present(alertEmptyData, animated: true, completion: nil)
         }else{
-            Alamofire.request("https://smart-garden-api-v12.herokuapp.com/api/newGarden", method: .post, parameters: ["name":name, "location":location, "user_id":idd], encoding: JSONEncoding.default).responseJSON { (response) in
+            Alamofire.request("https://api-smart-garden.herokuapp.com//api/newGarden", method: .post, parameters: ["name":name, "location":location, "user_id":idd], encoding: JSONEncoding.default).responseJSON { (response) in
                 if let JSON = response.result.value{
                     print(JSON)
                     self.performSegue(withIdentifier: "gardenAdded", sender: nil)
@@ -56,7 +56,7 @@ class NewGardenViewController: UIViewController {
     }
     func logedIn(){
         let headers: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)", "Accept":"application/json"]
-        Alamofire.request("https://smart-garden-api-v12.herokuapp.com/loggedIn", method: .get, headers: headers).responseData{(response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com//loggedIn", method: .get, headers: headers).responseData{(response) in
             guard let data = response.value else { return }
             print(data)
             do{

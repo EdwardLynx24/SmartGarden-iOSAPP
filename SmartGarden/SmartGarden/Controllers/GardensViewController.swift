@@ -47,7 +47,7 @@ class GardensViewController: UIViewController {
     @IBAction func logOut(_ sender: Any){
         debugPrint("Presionado")
         let headersnot401: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)", "Accept":"aplication/json"]
-        Alamofire.request("https://smart-garden-api-v12.herokuapp.com/logout", method: .post, parameters: ["Authentication":App.shared.tokensaved],headers: headersnot401).responseJSON{(response) -> Void in
+        Alamofire.request("https://api-smart-garden.herokuapp.com//logout", method: .post, parameters: ["Authentication":App.shared.tokensaved],headers: headersnot401).responseJSON{(response) -> Void in
             print(response)
             if let JSON = response.request?.value{
                 self.performSegue(withIdentifier: "logOut", sender: nil)
@@ -63,7 +63,7 @@ class GardensViewController: UIViewController {
     
     func logedIn(){
         let headers: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)", "Accept":"application/json"]
-        Alamofire.request("https://smart-garden-api-v12.herokuapp.com/loggedIn", method: .get, headers: headers).responseData{(response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com//loggedIn", method: .get, headers: headers).responseData{(response) in
             guard let data = response.value else { return }
             do{
                 let decoder = JSONDecoder()
@@ -96,7 +96,7 @@ class GardensViewController: UIViewController {
     }
     
     func getStoredGardens(idde:Int, completionHandler: @escaping([GardensSaved])->Void){
-        Alamofire.request("https://smart-garden-api-v12.herokuapp.com/api/Garden/showByUser?id=\(idde)", method: .get).responseData(completionHandler: {(response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com//api/Garden/showByUser?id=\(idde)", method: .get).responseData(completionHandler: {(response) in
             guard let data = response.value else { return }
             do{
                 print("xcosa", idde)

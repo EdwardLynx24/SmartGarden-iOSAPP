@@ -29,7 +29,7 @@ class NewSensorViewController: UIViewController {
         let pines = txf_pines.text!
         let tipo = txf_tipo.text!
         
-        Alamofire.request("https://smart-garden-api-v12.herokuapp.com/api/newSensor", method: .post, parameters: ["name":nombre, "pins":pines, "type":tipo], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com//api/newSensor", method: .post, parameters: ["name":nombre, "pins":pines, "type":tipo], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             if let JSON = response.result.value{
                 print(JSON)
                 self.performSegue(withIdentifier: "sensorAdded", sender: nil)
