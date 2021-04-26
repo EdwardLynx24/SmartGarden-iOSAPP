@@ -740,7 +740,7 @@
                                 <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0C5-YR-VSy">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre del sensor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0C5-YR-VSy">
                                 <rect key="frame" x="45" y="215.5" width="324" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="wiI-31-LVh"/>
@@ -755,7 +755,7 @@
                                 <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jen-uv-cbH">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero, Numero" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jen-uv-cbH">
                                 <rect key="frame" x="45" y="300" width="324" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="PyN-0c-EPY"/>
@@ -770,7 +770,7 @@
                                 <color key="textColor" red="0.4039215686" green="0.4039215686" blue="0.4039215686" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ixe-k5-GhR">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tipo de sensor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ixe-k5-GhR">
                                 <rect key="frame" x="45" y="384.5" width="324" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Y5w-Q5-e9n"/>
@@ -1422,7 +1422,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre completo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bww-3R-hFK">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example@example.example" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bww-3R-hFK">
                                                 <rect key="frame" x="27" y="492" width="363" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="YBr-t2-2ct"/>
@@ -1805,11 +1805,11 @@
         <image name="termometro 1.png" width="63" height="63"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EBp-7e-CeX"/>
-        <segue reference="t14-T5-AbX"/>
+        <segue reference="7qc-XD-lHa"/>
+        <segue reference="sK4-Lb-df5"/>
         <segue reference="2kh-d3-uw8"/>
         <segue reference="ZJh-dU-Ywf"/>
         <segue reference="jyG-tY-Ft0"/>
-        <segue reference="tbE-A9-b4F"/>
+        <segue reference="fx1-pU-wgq"/>
     </inferredMetricsTieBreakers>
 </document>
