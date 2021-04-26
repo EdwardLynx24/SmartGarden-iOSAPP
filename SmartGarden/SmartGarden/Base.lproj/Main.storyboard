@@ -859,6 +859,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6e-jN-GMC">
                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
+                                                <connections>
+                                                    <action selector="regar:" destination="4nF-Nu-4dN" eventType="touchUpInside" id="jWK-22-s8o"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.28627450980000002" green="0.69411764710000001" blue="0.94901960780000005" alpha="0.63" colorSpace="calibratedRGB"/>
@@ -896,6 +899,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfo-ps-EZ1">
                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="iluminar:" destination="4nF-Nu-4dN" eventType="touchUpInside" id="pfL-EY-pmB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94117647058823528" green="0.95294117647058818" blue="0.28235294117647058" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
@@ -964,6 +970,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afJ-qQ-jMt">
                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="144"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="eliminarPlanta:" destination="4nF-Nu-4dN" eventType="touchUpInside" id="F5k-0b-lQ5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.58039215686274503" green="0.38431372549019605" blue="0.10588235294117647" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
@@ -1096,6 +1105,7 @@
                         <outlet property="lb_humidy" destination="dZl-jv-tgQ" id="K7S-cx-sML"/>
                         <outlet property="lb_plantName" destination="6KG-bb-iZz" id="BHo-Bx-hQ1"/>
                         <outlet property="lb_temp" destination="Pzi-AA-grQ" id="cEE-Wf-ktp"/>
+                        <segue destination="VuX-ok-43a" kind="presentation" identifier="dropPlant" id="HYs-5n-CWO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="331-qU-Aty" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1786,7 +1796,7 @@
         <segue reference="Iyr-b3-DGt"/>
         <segue reference="t14-T5-AbX"/>
         <segue reference="r7X-w4-8de"/>
-        <segue reference="2hY-f8-khe"/>
+        <segue reference="HYs-5n-CWO"/>
         <segue reference="Pm8-um-it6"/>
         <segue reference="tbE-A9-b4F"/>
     </inferredMetricsTieBreakers>

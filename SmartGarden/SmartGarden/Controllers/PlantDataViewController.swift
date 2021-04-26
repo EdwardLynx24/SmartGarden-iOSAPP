@@ -14,11 +14,14 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     
     private var socket: WebSocket! = nil
     
+    let headers: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)","Accept":"aplication/json"]
+    
     @IBOutlet weak var lb_temp: UILabel!
     @IBOutlet weak var lb_humidy: UILabel!
     @IBOutlet weak var lb_plantName: UILabel!
-    let headers: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)","Accept":"aplication/json"]
+    
     var plantID:Int = 0
+    var gardenID:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +29,49 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
         print("ID de planta: \(self.plantID)")
         getPlantData()
         self.wsConector()
+        print(self.gardenID)
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "dropPlant" {
+            let destino = segue.destination as! PlantsViewController
+            destino.gardenID = self.gardenID
+        }
+    }
+    
+    @IBAction func eliminarPlanta(_ sender: Any) {
+        //dropPlant
+        Alamofire.request("https://smart-garden-api-v12.herokuapp.com/api/Flowerpot/delete", method: .delete, parameters: ["id":self.plantID], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            if let JSON = response.value{
+                print(JSON)
+                self.performSegue(withIdentifier: "dropPlant", sender: nil)
+            }
+        }
+    }
+    
+    @IBAction func regar(_ sender: Any) {
+        
+        self.onAction(string: "Regar")
+        
+    }
+    
+    func onAction(string:String){
+        let params = ["t":1,"d":["topic":"chat","event":"message","data":string]] as [String : Any]
+        guard JSONSerialization.isValidJSONObject(params) else { fatalError("JSON Invalid") }
+        do{
+            let data = try JSONSerialization.data(withJSONObject: params)
+            socket.write(data: data)
+        }catch{
+            print(error)
+        }
+    }
+    
+    @IBAction func iluminar(_ sender: Any) {
+        
+        self.onAction(string: "Iluminar")
+        
+    }
     func wsConector(){
         
         var request = URLRequest(url: URL(string: "ws://chat-api-for-python-v0.herokuapp.com/adonis-ws")!)
@@ -89,7 +132,6 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     
     
     func getPlantData(){
-        
         Alamofire.request("https://smart-garden-api-v12.herokuapp.com/api/Flowerpot/show?id=\(self.plantID)", method: .get, headers: headers).responseData { (response) in
             guard let data = response.value else { return }
             do{

@@ -39,6 +39,7 @@ class PlantsViewController: UIViewController {
             let destino = segue.destination as! PlantDataViewController
             if let button = sender as? UIButton{
                 destino.plantID = button.tag
+                destino.gardenID = self.gardenID
             }
         }else if segue.identifier == "addPlant"{
             let destino = segue.destination as! NewPlant_CategoryViewController
