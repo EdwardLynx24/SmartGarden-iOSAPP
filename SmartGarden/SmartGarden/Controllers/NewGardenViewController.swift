@@ -41,7 +41,7 @@ class NewGardenViewController: UIViewController {
             }))
             self.present(alertEmptyData, animated: true, completion: nil)
         }else{
-            Alamofire.request("https://api-smart-garden.herokuapp.com/api/newGarden", method: .post, parameters: ["name":name, "location":location, "user_id":idd], encoding: JSONEncoding.default, headers:headers).responseJSON { (response) in
+            Alamofire.request("https://api-smart-garden.herokuapp.com/api/newGarden", method: .post, parameters: ["name":name, "location":location, "user_id":idd], encoding: JSONEncoding.default, headers:self.headers).responseJSON { (response) in
                 if let JSON = response.result.value{
                     print(JSON)
                     self.performSegue(withIdentifier: "gardenAdded", sender: nil)
