@@ -14,6 +14,8 @@ class GardensViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var btn_new: UIButton!
     
+    let headers: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)","Accept":"aplication/json"]
+    
     @IBAction func new(_ sender: Any) {
         self.performSegue(withIdentifier: "addNewGarden", sender: nil)
     }
@@ -47,7 +49,7 @@ class GardensViewController: UIViewController {
     @IBAction func logOut(_ sender: Any){
         debugPrint("Presionado")
         let headersnot401: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)", "Accept":"aplication/json"]
-        Alamofire.request("https://api-smart-garden.herokuapp.com//logout", method: .post, parameters: ["Authentication":App.shared.tokensaved],headers: headersnot401).responseJSON{(response) -> Void in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/logout", method: .post, parameters: ["Authentication":App.shared.tokensaved],headers: headersnot401).responseJSON{(response) -> Void in
             print(response)
             if let JSON = response.request?.value{
                 self.performSegue(withIdentifier: "logOut", sender: nil)
@@ -96,7 +98,7 @@ class GardensViewController: UIViewController {
     }
     
     func getStoredGardens(idde:Int, completionHandler: @escaping([GardensSaved])->Void){
-        Alamofire.request("https://api-smart-garden.herokuapp.com/api/Garden/showByUser?id=\(idde)", method: .get).responseData(completionHandler: {(response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/api/Garden/showByUser?id=\(idde)", method: .get, headers: headers).responseData(completionHandler: {(response) in
             guard let data = response.value else { return }
             do{
                 print("xcosa", idde)

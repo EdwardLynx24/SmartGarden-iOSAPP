@@ -68,7 +68,7 @@ class PlantsViewController: UIViewController {
         
         print("Bob me llamo compi")
         print("Che mugrero \(self.gardenID)")
-        Alamofire.request("https://api-smart-garden.herokuapp.com/api/Flowerpot/showByGarden?garden=\(self.gardenID)", method: .get).responseData(completionHandler: {(response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/api/Flowerpot/showByGarden?garden=\(self.gardenID)", method: .get, headers:headers).responseData(completionHandler: {(response) in
             guard let data = response.value else { return }
             do{
                 let decoder = try JSONDecoder().decode([Planta].self , from: data)
