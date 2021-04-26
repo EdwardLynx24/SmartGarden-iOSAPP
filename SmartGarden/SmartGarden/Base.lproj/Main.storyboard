@@ -948,14 +948,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ld-zr-Ydv" userLabel="History">
                                         <rect key="frame" x="229" y="274" width="144" height="144"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="historyy 1.png" translatesAutoresizingMaskIntoConstraints="NO" id="AWF-R1-qm1">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete.png" translatesAutoresizingMaskIntoConstraints="NO" id="AWF-R1-qm1">
                                                 <rect key="frame" x="35" y="28" width="73" height="73"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="73" id="FBr-Je-e4A"/>
                                                     <constraint firstAttribute="width" constant="73" id="aYJ-vw-YeP"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Historial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9d-yp-3d6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eliminar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9d-yp-3d6">
                                                 <rect key="frame" x="40" y="109" width="63" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1093,7 +1093,9 @@
                         <viewLayoutGuide key="safeArea" id="gu5-S9-TON"/>
                     </view>
                     <connections>
+                        <outlet property="lb_humidy" destination="dZl-jv-tgQ" id="K7S-cx-sML"/>
                         <outlet property="lb_plantName" destination="6KG-bb-iZz" id="BHo-Bx-hQ1"/>
+                        <outlet property="lb_temp" destination="Pzi-AA-grQ" id="cEE-Wf-ktp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="331-qU-Aty" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1761,12 +1763,12 @@
     <resources>
         <image name="Screenshot_1.png" width="32.25" height="29.25"/>
         <image name="bkg_sign.png" width="796" height="1349"/>
+        <image name="delete.png" width="122.87999725341797" height="122.87999725341797"/>
         <image name="e_Nexus_logo 1.png" width="184" height="195"/>
         <image name="edit.png" width="62" height="62"/>
         <image name="foco 1.png" width="82" height="82"/>
         <image name="hamburguermenu.png" width="61.5" height="54"/>
         <image name="help.png" width="92" height="92"/>
-        <image name="historyy 1.png" width="80" height="80"/>
         <image name="image 12.png" width="121" height="103"/>
         <image name="image 4.png" width="48" height="52"/>
         <image name="image 5.png" width="48" height="52"/>
@@ -1779,11 +1781,10 @@
         <image name="termometro 1.png" width="63" height="63"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rFS-bR-U4M"/>
         <segue reference="EBp-7e-CeX"/>
         <segue reference="PQT-wl-zGx"/>
         <segue reference="Iyr-b3-DGt"/>
-        <segue reference="sK4-Lb-df5"/>
+        <segue reference="t14-T5-AbX"/>
         <segue reference="r7X-w4-8de"/>
         <segue reference="2hY-f8-khe"/>
         <segue reference="Pm8-um-it6"/>

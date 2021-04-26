@@ -8,7 +8,6 @@ target 'SmartGarden' do
   # Pods for SmartGarden
 
   pod 'Alamofire', '~> 4.8.2'
-
-
+  pod 'Starscream', '~> 3.0.1'
   
 end

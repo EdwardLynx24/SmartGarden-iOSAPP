@@ -33,7 +33,6 @@
 		3E9CF7CB26254DDA00011AFF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9CF7CA26254DDA00011AFF /* User.swift */; };
 		3E9F90C72625E57C00F9B9C3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9F90C62625E57C00F9B9C3 /* App.swift */; };
 		3E9F90C9262610E200F9B9C3 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9F90C8262610E200F9B9C3 /* Auth.swift */; };
-		3EA3C7E92626792F00C759F5 /* HTTPRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA3C7E82626792F00C759F5 /* HTTPRequests.swift */; };
 		3EA3C7EB26267D7C00C759F5 /* exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA3C7EA26267D7C00C759F5 /* exit.png */; };
 		3EA3C7ED2628A5FB00C759F5 /* UserLogged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA3C7EC2628A5FB00C759F5 /* UserLogged.swift */; };
 		3EB74BC5261E613300AF0066 /* UsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB74BC4261E613300AF0066 /* UsViewController.swift */; };
@@ -52,11 +51,14 @@
 		3ECB0840261EA5F8009DA834 /* historyy 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECB083C261EA5F7009DA834 /* historyy 1.png */; };
 		3EDE26532623C41C00606B96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E4776E0261A944B002AA368 /* Main.storyboard */; };
 		3EDE26542623C41E00606B96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E4776E0261A944B002AA368 /* Main.storyboard */; };
+		3EE6D88D26362DAE00657B93 /* wsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6D88C26362DAE00657B93 /* wsObject.swift */; };
+		3EE6D88F26363C9B00657B93 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6D88E26363C9A00657B93 /* Data.swift */; };
+		3EE6D8922636422000657B93 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE6D8902636421D00657B93 /* delete.png */; };
+		3EE6D8932636422000657B93 /* microchip.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE6D8912636421E00657B93 /* microchip.png */; };
 		3EE8C44A261CE191005E110E /* GardensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8C449261CE191005E110E /* GardensViewController.swift */; };
 		3EE8C44C261D0BB0005E110E /* hamburguermenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE8C44B261D0BAF005E110E /* hamburguermenu.png */; };
 		3EE8C44E261D15AF005E110E /* PlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8C44D261D15AF005E110E /* PlantsViewController.swift */; };
 		3EEC0C18262BB5AA00735137 /* plantas 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC0C17262BB5AA00735137 /* plantas 2.png */; };
-		3EEC0C1A262C9B0200735137 /* microchip.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEC0C19262C9B0100735137 /* microchip.png */; };
 		3EEC0C1C262CCE8E00735137 /* UserForLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC0C1B262CCE8E00735137 /* UserForLog.swift */; };
 		3EEC0C1E262CD49B00735137 /* ProfilePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC0C1D262CD49B00735137 /* ProfilePreviewViewController.swift */; };
 		3EEC0C20262D1AAE00735137 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC0C1F262D1AAE00735137 /* Sensor.swift */; };
@@ -124,7 +126,6 @@
 		3E9CF7CA26254DDA00011AFF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3E9F90C62625E57C00F9B9C3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		3E9F90C8262610E200F9B9C3 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
-		3EA3C7E82626792F00C759F5 /* HTTPRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequests.swift; sourceTree = "<group>"; };
 		3EA3C7EA26267D7C00C759F5 /* exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exit.png; sourceTree = "<group>"; };
 		3EA3C7EC2628A5FB00C759F5 /* UserLogged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogged.swift; sourceTree = "<group>"; };
 		3EB74BC4261E613300AF0066 /* UsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsViewController.swift; sourceTree = "<group>"; };
@@ -141,11 +142,15 @@
 		3ECB083A261EA5F7009DA834 /* rega 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rega 1.png"; sourceTree = "<group>"; };
 		3ECB083B261EA5F7009DA834 /* foco 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foco 1.png"; sourceTree = "<group>"; };
 		3ECB083C261EA5F7009DA834 /* historyy 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "historyy 1.png"; sourceTree = "<group>"; };
+		3EE6D88A26360C2B00657B93 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE6D88C26362DAE00657B93 /* wsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wsObject.swift; sourceTree = "<group>"; };
+		3EE6D88E26363C9A00657B93 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		3EE6D8902636421D00657B93 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = delete.png; path = ../../../Resources/delete.png; sourceTree = "<group>"; };
+		3EE6D8912636421E00657B93 /* microchip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = microchip.png; path = ../../../Resources/microchip.png; sourceTree = "<group>"; };
 		3EE8C449261CE191005E110E /* GardensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardensViewController.swift; sourceTree = "<group>"; };
 		3EE8C44B261D0BAF005E110E /* hamburguermenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguermenu.png; sourceTree = "<group>"; };
 		3EE8C44D261D15AF005E110E /* PlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsViewController.swift; sourceTree = "<group>"; };
 		3EEC0C17262BB5AA00735137 /* plantas 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plantas 2.png"; sourceTree = "<group>"; };
-		3EEC0C19262C9B0100735137 /* microchip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microchip.png; sourceTree = "<group>"; };
 		3EEC0C1B262CCE8E00735137 /* UserForLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserForLog.swift; sourceTree = "<group>"; };
 		3EEC0C1D262CD49B00735137 /* ProfilePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreviewViewController.swift; sourceTree = "<group>"; };
 		3EEC0C1F262D1AAE00735137 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
@@ -260,7 +265,8 @@
 		3E477716261A96F1002AA368 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3EEC0C19262C9B0100735137 /* microchip.png */,
+				3EE6D8902636421D00657B93 /* delete.png */,
+				3EE6D8912636421E00657B93 /* microchip.png */,
 				3EEC0C17262BB5AA00735137 /* plantas 2.png */,
 				3EA3C7EA26267D7C00C759F5 /* exit.png */,
 				3ECB0841261EA602009DA834 /* Buttons */,
@@ -327,13 +333,14 @@
 				3E9CF7CA26254DDA00011AFF /* User.swift */,
 				3E9F90C62625E57C00F9B9C3 /* App.swift */,
 				3E9F90C8262610E200F9B9C3 /* Auth.swift */,
-				3EA3C7E82626792F00C759F5 /* HTTPRequests.swift */,
 				3EA3C7EC2628A5FB00C759F5 /* UserLogged.swift */,
 				3E6EFAA62628FAD4009A15A7 /* Gardens.swift */,
 				3EEC0C1B262CCE8E00735137 /* UserForLog.swift */,
 				3EEC0C1F262D1AAE00735137 /* Sensor.swift */,
 				3EEC0C23262D223D00735137 /* Plant.swift */,
 				3EBE029C2635C0FB008BE901 /* ShowedPlant.swift */,
+				3EE6D88C26362DAE00657B93 /* wsObject.swift */,
+				3EE6D88E26363C9A00657B93 /* Data.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -381,6 +388,7 @@
 		AD2F48F0649333212B8646A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3EE6D88A26360C2B00657B93 /* Starscream.framework */,
 				52BDC880986605C116B4CFC3 /* Pods_SmartGarden.framework */,
 			);
 			name = Frameworks;
@@ -492,10 +500,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EE6D8922636422000657B93 /* delete.png in Resources */,
 				3E4776E7261A944D002AA368 /* LaunchScreen.storyboard in Resources */,
 				3EEC0C18262BB5AA00735137 /* plantas 2.png in Resources */,
 				3E4776E4261A944D002AA368 /* Assets.xcassets in Resources */,
-				3EEC0C1A262C9B0200735137 /* microchip.png in Resources */,
 				3E477721261AA9A9002AA368 /* view.png in Resources */,
 				3E477710261A96DF002AA368 /* image 5.png in Resources */,
 				3E47771F261AA9A9002AA368 /* bkg_sign.png in Resources */,
@@ -522,6 +530,7 @@
 				3ECB0838261EA17E009DA834 /* Screenshot_1.png in Resources */,
 				3EC31E0A261FBA920004510B /* filter-512 3.png in Resources */,
 				3E477711261A96DF002AA368 /* image 8.png in Resources */,
+				3EE6D8932636422000657B93 /* microchip.png in Resources */,
 				3E477725261AA9A9002AA368 /* profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,11 +618,12 @@
 				3E4776DD261A944A002AA368 /* AppDelegate.swift in Sources */,
 				3EE8C44E261D15AF005E110E /* PlantsViewController.swift in Sources */,
 				3EBE029D2635C0FB008BE901 /* ShowedPlant.swift in Sources */,
+				3EE6D88F26363C9B00657B93 /* Data.swift in Sources */,
 				3EA3C7ED2628A5FB00C759F5 /* UserLogged.swift in Sources */,
 				3EEC0C27262D22FC00735137 /* ScannerViewController.swift in Sources */,
-				3EA3C7E92626792F00C759F5 /* HTTPRequests.swift in Sources */,
 				3EF5AA4B2634BD13006B2B04 /* NewPlant&CategoryViewController.swift in Sources */,
 				3EB74BC7261E617C00AF0066 /* ProfileViewController.swift in Sources */,
+				3EE6D88D26362DAE00657B93 /* wsObject.swift in Sources */,
 				3E9CF7CB26254DDA00011AFF /* User.swift in Sources */,
 				3EF5AA512635BA63006B2B04 /* PlantDataViewController.swift in Sources */,
 				3EF9CCD1261BC7DC001E6ABD /* RegisterViewController.swift in Sources */,
