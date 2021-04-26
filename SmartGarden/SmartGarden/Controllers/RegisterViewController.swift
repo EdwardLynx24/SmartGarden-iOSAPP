@@ -81,6 +81,7 @@ class RegisterViewController: UIViewController {
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
+    
     func registerUser(){
         
         let txfName = txf_name.text!
@@ -89,9 +90,7 @@ class RegisterViewController: UIViewController {
         let txfPass = txf_pass.text!
         
         Alamofire.request("https://smart-garden-api-v12.herokuapp.com/register", method: .post, parameters: ["name":txfName,"lastName":txfLastName,"email":txfMail,"password":txfPass], encoding: JSONEncoding.default).responseJSON { (response) in
-            if let JSON = response.result.value{
-                print(JSON)
-            }
+            self.performSegue(withIdentifier: "RegisterSuccessfull", sender: nil)
         }
     }
 }

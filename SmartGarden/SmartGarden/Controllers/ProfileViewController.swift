@@ -47,10 +47,22 @@ class ProfileViewController: UIViewController {
         let emailUP = txf_email.text!
         
         if nombreUP.isEmpty && apellidoUP.isEmpty{
-            Alamofire.request("https://smart-garden-api-v12.herokuapp.com/update", method: .put, parameters: ["id":id, "email":emailUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
-                print(response)
+            
+            let state = self.isValidEmail(emailUP)
+            
+            if state == true{
+                Alamofire.request("https://smart-garden-api-v12.herokuapp.com/update", method: .put, parameters: ["id":id, "email":emailUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                    print(response)
+                }
+            }else{
+                let alertWrongEmail = UIAlertController(title: "Correo electronico invalido", message: "Verifica el correo electronico", preferredStyle: .alert)
+                alertWrongEmail.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alertAction) in
+                    alertWrongEmail.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alertWrongEmail, animated: true, completion: nil)
             }
         }
+            
         else if nombreUP.isEmpty && emailUP.isEmpty{
             Alamofire.request("https://smart-garden-api-v12.herokuapp.com/update", method: .put, parameters: ["id":id, "lastName":apellidoUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                 print(response)
@@ -64,8 +76,17 @@ class ProfileViewController: UIViewController {
                 print(response)
             }
         }else{
-            Alamofire.request("https://smart-garden-api-v12.herokuapp.com/update", method: .put, parameters: ["id":id, "name":nombreUP,"lastName":apellidoUP,"email":emailUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
-                print(response)
+            let state = self.isValidEmail(emailUP)
+            if state == true{
+                Alamofire.request("https://smart-garden-api-v12.herokuapp.com/update", method: .put, parameters: ["id":id, "name":nombreUP,"lastName":apellidoUP,"email":emailUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                    print(response)
+                }
+            }else{
+                let alertWrongEmail = UIAlertController(title: "Correo electronico invalido", message: "Verifica el correo electronico", preferredStyle: .alert)
+                alertWrongEmail.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alertAction) in
+                    alertWrongEmail.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alertWrongEmail, animated: true, completion: nil)
             }
         }
     }
@@ -102,6 +123,13 @@ class ProfileViewController: UIViewController {
                 print("Nada")
             }
         }
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
     }
 }
 

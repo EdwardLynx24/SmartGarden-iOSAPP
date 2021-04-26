@@ -1020,7 +1020,7 @@
                                 </constraints>
                                 <state key="normal" image="Screenshot_1.png"/>
                                 <connections>
-                                    <segue destination="tfx-Ip-utu" kind="show" id="PQT-wl-zGx"/>
+                                    <segue destination="uPK-tb-CnY" kind="show" id="2kh-d3-uw8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Información" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56T-Sk-wlF">
@@ -1059,6 +1059,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNx-nt-Wuk">
+                                <rect key="frame" x="304" y="121" width="90" height="33"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                <state key="normal" title="-&gt; Plantas">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOut:" destination="wmQ-6S-SoS" eventType="touchUpInside" id="89E-r7-S9O"/>
+                                    <segue destination="VuX-ok-43a" kind="show" id="ZJh-dU-Ywf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.65098039220000004" green="0.94901960780000005" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1069,6 +1080,7 @@
                             <constraint firstItem="VSA-B0-BgJ" firstAttribute="leading" secondItem="F7G-dT-6m1" secondAttribute="trailing" constant="4" id="8QU-YR-Djs"/>
                             <constraint firstItem="hvF-6H-zKT" firstAttribute="top" secondItem="VQG-NP-PQj" secondAttribute="bottom" constant="58" id="9pR-O0-iaJ"/>
                             <constraint firstAttribute="bottom" secondItem="hvF-6H-zKT" secondAttribute="bottom" id="AOo-jb-dLR"/>
+                            <constraint firstItem="eNx-nt-Wuk" firstAttribute="top" secondItem="T7U-xM-cBJ" secondAttribute="bottom" constant="23" id="C3g-sy-cXk"/>
                             <constraint firstItem="gu5-S9-TON" firstAttribute="trailing" secondItem="Pzi-AA-grQ" secondAttribute="trailing" constant="50" id="DGE-az-cDK"/>
                             <constraint firstItem="VSA-B0-BgJ" firstAttribute="leading" secondItem="dZl-jv-tgQ" secondAttribute="trailing" constant="19" id="DV0-9v-TOG"/>
                             <constraint firstItem="VQG-NP-PQj" firstAttribute="leading" secondItem="F7G-dT-6m1" secondAttribute="trailing" constant="171" id="JRs-Pk-gyf"/>
@@ -1077,6 +1089,7 @@
                             <constraint firstItem="rsa-8a-TLo" firstAttribute="leading" secondItem="gu5-S9-TON" secondAttribute="leading" constant="40" id="PFN-86-BaW"/>
                             <constraint firstItem="Pzi-AA-grQ" firstAttribute="leading" secondItem="VSA-B0-BgJ" secondAttribute="trailing" constant="19" id="PQK-u0-jrs"/>
                             <constraint firstItem="T7U-xM-cBJ" firstAttribute="top" secondItem="gu5-S9-TON" secondAttribute="top" constant="19" id="Qqt-4P-8h4"/>
+                            <constraint firstItem="gu5-S9-TON" firstAttribute="trailing" secondItem="eNx-nt-Wuk" secondAttribute="trailing" constant="20" id="QuU-oj-Bey"/>
                             <constraint firstItem="hvF-6H-zKT" firstAttribute="top" secondItem="rsa-8a-TLo" secondAttribute="bottom" constant="108" id="RAg-xr-0XU"/>
                             <constraint firstItem="VQG-NP-PQj" firstAttribute="top" secondItem="Pzi-AA-grQ" secondAttribute="bottom" id="RHX-XF-YdW"/>
                             <constraint firstItem="56T-Sk-wlF" firstAttribute="top" secondItem="wo7-LR-FGL" secondAttribute="bottom" constant="18" id="UZJ-5W-CYN"/>
@@ -1792,10 +1805,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="EBp-7e-CeX"/>
-        <segue reference="PQT-wl-zGx"/>
         <segue reference="Iyr-b3-DGt"/>
-        <segue reference="sK4-Lb-df5"/>
-        <segue reference="r7X-w4-8de"/>
+        <segue reference="t14-T5-AbX"/>
+        <segue reference="2kh-d3-uw8"/>
         <segue reference="HYs-5n-CWO"/>
         <segue reference="Pm8-um-it6"/>
         <segue reference="tbE-A9-b4F"/>
