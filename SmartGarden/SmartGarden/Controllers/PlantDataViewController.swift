@@ -57,7 +57,7 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     }
     
     func onAction(string:String){
-        let params = ["t":1,"d":["topic":"chat","event":"message","data":string]] as [String : Any]
+        let params = ["t":7,"d":["topic":"chat","event":"message","data":string]] as [String : Any]
         guard JSONSerialization.isValidJSONObject(params) else { fatalError("JSON Invalid") }
         do{
             let data = try JSONSerialization.data(withJSONObject: params)
