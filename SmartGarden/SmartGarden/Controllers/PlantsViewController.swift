@@ -34,6 +34,23 @@ class PlantsViewController: UIViewController {
         //self.performSegue(withIdentifier: "addPlant", sender: nil)
     }
     
+    @IBAction func logout(_ sender: Any) {
+        
+        let headersnot401: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)", "Accept":"aplication/json"]
+        Alamofire.request("https://smart-garden-api-v12.herokuapp.com/logout", method: .post, parameters: ["Authentication":App.shared.tokensaved],headers: headersnot401).responseJSON{(response) -> Void in
+            print(response)
+            if let JSON = response.request?.value{
+                self.performSegue(withIdentifier: "logOut", sender: nil)
+            }else{
+                let alertwronglogout = UIAlertController(title: "Fallo el Logout", message: "Token Incorrecto", preferredStyle: .alert)
+                alertwronglogout.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(alertAction) in
+                    alertwronglogout.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alertwronglogout, animated: true, completion: nil)
+            }
+        }
+        
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "plantData" {
             let destino = segue.destination as! PlantDataViewController

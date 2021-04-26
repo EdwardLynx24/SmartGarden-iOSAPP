@@ -88,7 +88,7 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="pushRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ANF-5K-V4H"/>
-                                                            <segue destination="6Ue-RZ-dbp" kind="modal" identifier="GoToRegister" id="2oY-vv-S18"/>
+                                                            <segue destination="6Ue-RZ-dbp" kind="show" identifier="GoToRegister" id="2oY-vv-S18"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -254,7 +254,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar Contraseña" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="AIN-iZ-Qt1">
                                                 <rect key="frame" x="45" y="607" width="324" height="42"/>
@@ -263,7 +263,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUj-WU-XYH">
                                                 <rect key="frame" x="98" y="689" width="218" height="42"/>
@@ -532,6 +532,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logOut:" destination="wmQ-6S-SoS" eventType="touchUpInside" id="Jcf-pt-M5S"/>
+                                    <action selector="logout:" destination="VuX-ok-43a" eventType="touchUpInside" id="JQv-SE-yyn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhL-E0-nQ2">
@@ -1804,12 +1805,11 @@
         <image name="termometro 1.png" width="63" height="63"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2oY-vv-S18"/>
         <segue reference="EBp-7e-CeX"/>
         <segue reference="Iyr-b3-DGt"/>
         <segue reference="t14-T5-AbX"/>
-        <segue reference="2kh-d3-uw8"/>
-        <segue reference="HYs-5n-CWO"/>
+        <segue reference="r7X-w4-8de"/>
+        <segue reference="2hY-f8-khe"/>
         <segue reference="Pm8-um-it6"/>
         <segue reference="tbE-A9-b4F"/>
     </inferredMetricsTieBreakers>
