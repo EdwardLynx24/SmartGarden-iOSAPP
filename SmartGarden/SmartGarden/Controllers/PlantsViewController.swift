@@ -59,7 +59,7 @@ class PlantsViewController: UIViewController {
                 destino.gardenID = self.gardenID
             }
         }else if segue.identifier == "addPlant"{
-            let destino = segue.destination as! NewPlant_CategoryViewController
+            let destino = segue.destination as! ScannerViewController
             destino.gardenID = self.gardenID
         }
     }

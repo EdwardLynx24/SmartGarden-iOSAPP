@@ -513,7 +513,7 @@
                                         <connections>
                                             <action selector="addNewPlant:" destination="VuX-ok-43a" eventType="touchUpInside" id="0Mp-Cv-vRF"/>
                                             <action selector="new:" destination="wmQ-6S-SoS" eventType="touchUpInside" id="WOM-hL-3oh"/>
-                                            <segue destination="d3h-Mp-6CS" kind="show" identifier="addPlant" id="Iyr-b3-DGt"/>
+                                            <segue destination="LsK-Ym-RLc" kind="show" identifier="addPlant" id="iwX-01-uce"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -571,7 +571,6 @@
                         <outlet property="btn_new_plant" destination="d7q-tW-P8b" id="48J-iv-lCU"/>
                         <outlet property="scrollView" destination="HeF-TI-2cD" id="Pya-RI-m01"/>
                         <segue destination="4nF-Nu-4dN" kind="show" identifier="plantData" id="t14-T5-AbX"/>
-                        <segue destination="LsK-Ym-RLc" kind="show" identifier="goQR" id="86w-Ri-xUE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6B-Lc-oPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1345,6 +1344,7 @@
                     </view>
                     <connections>
                         <segue destination="d3h-Mp-6CS" kind="presentation" identifier="goAddPlant" id="rVs-8G-AnL"/>
+                        <segue destination="VuX-ok-43a" kind="presentation" identifier="cancelQR" id="EdQ-C2-BCi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hI-qN-NOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1806,10 +1806,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="EBp-7e-CeX"/>
-        <segue reference="Iyr-b3-DGt"/>
         <segue reference="t14-T5-AbX"/>
         <segue reference="r7X-w4-8de"/>
-        <segue reference="2hY-f8-khe"/>
+        <segue reference="EdQ-C2-BCi"/>
         <segue reference="Pm8-um-it6"/>
         <segue reference="tbE-A9-b4F"/>
     </inferredMetricsTieBreakers>

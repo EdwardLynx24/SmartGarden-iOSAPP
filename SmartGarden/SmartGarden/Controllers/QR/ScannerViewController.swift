@@ -13,6 +13,8 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    
+    var gardenID:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +94,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         }
     }
     
-    
     override func viewWillDisappear(_ animated: Bool) {
         if captureSession.isRunning {
             captureSession.stopRunning()
@@ -103,5 +104,21 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
         return .portrait
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "plantData" {
+            let destino = segue.destination as! PlantDataViewController
+            if let button = sender as? UIButton{
+                destino.plantID = button.tag
+                destino.gardenID = self.gardenID
+            }
+        }else if segue.identifier == "goAddPlant"{
+            let destino = segue.destination as! NewPlant_CategoryViewController
+            destino.gardenID = self.gardenID
+        }else if segue.identifier == "cancelQR"{
+            let destino = segue.destination as! PlantsViewController
+            destino.gardenID = self.gardenID
+        }
     }
 }
