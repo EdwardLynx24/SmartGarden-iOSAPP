@@ -1804,6 +1804,7 @@
         <image name="termometro 1.png" width="63" height="63"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2oY-vv-S18"/>
         <segue reference="EBp-7e-CeX"/>
         <segue reference="Iyr-b3-DGt"/>
         <segue reference="t14-T5-AbX"/>

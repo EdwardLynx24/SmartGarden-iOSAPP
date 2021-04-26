@@ -55,7 +55,6 @@
 		3EE6D88F26363C9B00657B93 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6D88E26363C9A00657B93 /* Data.swift */; };
 		3EE6D8922636422000657B93 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE6D8902636421D00657B93 /* delete.png */; };
 		3EE6D8932636422000657B93 /* microchip.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE6D8912636421E00657B93 /* microchip.png */; };
-		3EE6D89526367AE400657B93 /* UserValidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6D89426367AE400657B93 /* UserValidate.swift */; };
 		3EE8C44A261CE191005E110E /* GardensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8C449261CE191005E110E /* GardensViewController.swift */; };
 		3EE8C44C261D0BB0005E110E /* hamburguermenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE8C44B261D0BAF005E110E /* hamburguermenu.png */; };
 		3EE8C44E261D15AF005E110E /* PlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE8C44D261D15AF005E110E /* PlantsViewController.swift */; };
@@ -148,7 +147,6 @@
 		3EE6D88E26363C9A00657B93 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		3EE6D8902636421D00657B93 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = delete.png; path = ../../../Resources/delete.png; sourceTree = "<group>"; };
 		3EE6D8912636421E00657B93 /* microchip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = microchip.png; path = ../../../Resources/microchip.png; sourceTree = "<group>"; };
-		3EE6D89426367AE400657B93 /* UserValidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserValidate.swift; sourceTree = "<group>"; };
 		3EE8C449261CE191005E110E /* GardensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardensViewController.swift; sourceTree = "<group>"; };
 		3EE8C44B261D0BAF005E110E /* hamburguermenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hamburguermenu.png; sourceTree = "<group>"; };
 		3EE8C44D261D15AF005E110E /* PlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsViewController.swift; sourceTree = "<group>"; };
@@ -343,7 +341,6 @@
 				3EBE029C2635C0FB008BE901 /* ShowedPlant.swift */,
 				3EE6D88C26362DAE00657B93 /* wsObject.swift */,
 				3EE6D88E26363C9A00657B93 /* Data.swift */,
-				3EE6D89426367AE400657B93 /* UserValidate.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -603,7 +600,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EE6D89526367AE400657B93 /* UserValidate.swift in Sources */,
 				3EE8C44A261CE191005E110E /* GardensViewController.swift in Sources */,
 				3EF5AA4F2634BFE1006B2B04 /* PlantsButton.swift in Sources */,
 				3EEC0C20262D1AAE00735137 /* Sensor.swift in Sources */,
