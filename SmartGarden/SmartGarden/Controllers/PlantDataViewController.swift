@@ -37,6 +37,9 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
         if segue.identifier == "dropPlant" {
             let destino = segue.destination as! PlantsViewController
             destino.gardenID = self.gardenID
+        }else if segue.identifier == "goPlantsAgain"{
+            let destino = segue.destination as! PlantsViewController
+            destino.gardenID = self.gardenID
         }
     }
     
@@ -57,7 +60,7 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     }
     
     func onAction(string:String){
-        let params = ["t":7,"d":["topic":"chat","event":"message","data":string]] as [String : Any]
+        let params = ["t":7,"d":["topic":"chat","event":"message","data":["order":string, "plantID":self.plantID]]] as [String : Any]
         guard JSONSerialization.isValidJSONObject(params) else { fatalError("JSON Invalid") }
         do{
             let data = try JSONSerialization.data(withJSONObject: params)
@@ -89,7 +92,8 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
             do{
                 let wsobject = try decoder.decode(wsDataRecived.self, from: data)
                 print(wsobject.d.data)
-                self.lb_humidy.text = wsobject.d.data
+                self.lb_humidy.text = wsobject.d.data.humidity
+                self.lb_temp.text = wsobject.d.data.temperature
             }catch{
                 print("Decoder error")
             }
@@ -97,7 +101,6 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     }
     
     func websocketDidConnect(socket: WebSocketClient) {
-        print("Conectado a tu culito")
         wsTopic{
             print("Jalop")
         }

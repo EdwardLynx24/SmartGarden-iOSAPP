@@ -1067,7 +1067,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logOut:" destination="wmQ-6S-SoS" eventType="touchUpInside" id="89E-r7-S9O"/>
-                                    <segue destination="VuX-ok-43a" kind="show" id="ZJh-dU-Ywf"/>
+                                    <segue destination="VuX-ok-43a" kind="show" identifier="goPlantsAgain" id="ZJh-dU-Ywf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1805,12 +1805,11 @@
         <image name="termometro 1.png" width="63" height="63"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2oY-vv-S18"/>
         <segue reference="EBp-7e-CeX"/>
         <segue reference="t14-T5-AbX"/>
-        <segue reference="r7X-w4-8de"/>
-        <segue reference="EdQ-C2-BCi"/>
-        <segue reference="Pm8-um-it6"/>
+        <segue reference="2kh-d3-uw8"/>
+        <segue reference="ZJh-dU-Ywf"/>
+        <segue reference="jyG-tY-Ft0"/>
         <segue reference="tbE-A9-b4F"/>
     </inferredMetricsTieBreakers>
 </document>

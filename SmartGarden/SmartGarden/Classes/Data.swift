@@ -9,9 +9,8 @@
 import Foundation
 
 class DataWS: Codable {
-    var data:String
-    
-    init(data:String){
+    var data:Info
+    init(data:Info){
         self.data = data
     }
 }
