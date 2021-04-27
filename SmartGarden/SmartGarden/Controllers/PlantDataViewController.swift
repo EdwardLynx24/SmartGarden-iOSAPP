@@ -45,7 +45,7 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     
     @IBAction func eliminarPlanta(_ sender: Any) {
         //dropPlant
-        Alamofire.request("https://api-smart-garden.herokuapp.com//api/Flowerpot/delete", method: .delete, parameters: ["id":self.plantID], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/api/Flowerpot/delete", method: .delete, parameters: ["id":self.plantID], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             if let JSON = response.value{
                 print(JSON)
                 self.performSegue(withIdentifier: "dropPlant", sender: nil)
@@ -77,7 +77,7 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     }
     func wsConector(){
         
-        var request = URLRequest(url: URL(string: "ws://api-smart-garden.herokuapp.com/")!)
+        var request = URLRequest(url: URL(string: "ws://api-smart-garden.herokuapp.com/adonis-ws")!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self

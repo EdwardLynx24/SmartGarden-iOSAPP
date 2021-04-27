@@ -173,7 +173,7 @@
                     <connections>
                         <outlet property="txf_mail" destination="Bf1-c0-5f7" id="zD0-vL-Afz"/>
                         <outlet property="txf_pass" destination="ejn-rG-gn0" id="s6q-ly-MeA"/>
-                        <segue destination="fxn-Aw-ECV" kind="show" identifier="LoginSuccessfull" id="J45-xE-ayY"/>
+                        <segue destination="fxn-Aw-ECV" kind="presentation" identifier="LoginSuccessfull" modalPresentationStyle="fullScreen" id="J45-xE-ayY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -336,7 +336,7 @@
                         <outlet property="txf_name" destination="SKq-eO-fIB" id="6yj-6x-BaH"/>
                         <outlet property="txf_pass" destination="ygX-WJ-vZd" id="EJu-zd-JcS"/>
                         <outlet property="txf_passConfirm" destination="AIN-iZ-Qt1" id="Fv9-9S-WtG"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="RegisterSuccessfull" id="tbE-A9-b4F"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="RegisterSuccessfull" modalPresentationStyle="fullScreen" id="tbE-A9-b4F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDR-0J-T3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -445,7 +445,7 @@
                     <connections>
                         <outlet property="btn_new" destination="4Si-Gl-sDA" id="2lo-S2-8u6"/>
                         <outlet property="scrollView" destination="84z-9b-oVH" id="iIb-2J-bSN"/>
-                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="logOut" id="8o2-23-DxY"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="logOut" modalPresentationStyle="fullScreen" id="8o2-23-DxY"/>
                         <segue destination="fB3-9k-fyj" kind="show" identifier="addNewGarden" id="pQk-3A-EKT"/>
                         <segue destination="VuX-ok-43a" kind="show" identifier="plantasSegue" id="q9K-3b-ved"/>
                     </connections>
@@ -513,7 +513,7 @@
                                         <connections>
                                             <action selector="addNewPlant:" destination="VuX-ok-43a" eventType="touchUpInside" id="0Mp-Cv-vRF"/>
                                             <action selector="new:" destination="wmQ-6S-SoS" eventType="touchUpInside" id="WOM-hL-3oh"/>
-                                            <segue destination="LsK-Ym-RLc" kind="show" identifier="addPlant" id="iwX-01-uce"/>
+                                            <segue destination="d3h-Mp-6CS" kind="show" identifier="addPlant" id="bH2-WZ-Bxe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1330,7 +1330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWg-kZ-SXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3116" y="1287"/>
+            <point key="canvasLocation" x="3115.9420289855075" y="1286.3839285714284"/>
         </scene>
         <!--Scanner View Controller-->
         <scene sceneID="d5M-eW-wfN">
@@ -1342,10 +1342,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6j1-CC-rqh"/>
                     </view>
-                    <connections>
-                        <segue destination="d3h-Mp-6CS" kind="presentation" identifier="goAddPlant" id="rVs-8G-AnL"/>
-                        <segue destination="VuX-ok-43a" kind="presentation" identifier="cancelQR" id="EdQ-C2-BCi"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hI-qN-NOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1805,11 +1801,11 @@
         <image name="termometro 1.png" width="63" height="63"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7qc-XD-lHa"/>
-        <segue reference="sK4-Lb-df5"/>
-        <segue reference="2kh-d3-uw8"/>
+        <segue reference="EBp-7e-CeX"/>
+        <segue reference="t14-T5-AbX"/>
+        <segue reference="r7X-w4-8de"/>
         <segue reference="ZJh-dU-Ywf"/>
-        <segue reference="jyG-tY-Ft0"/>
-        <segue reference="fx1-pU-wgq"/>
+        <segue reference="Pm8-um-it6"/>
+        <segue reference="tbE-A9-b4F"/>
     </inferredMetricsTieBreakers>
 </document>

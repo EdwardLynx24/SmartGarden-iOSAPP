@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+//import iOSDropDown
 
 class NewPlant_CategoryViewController: UIViewController {
 
@@ -19,7 +20,11 @@ class NewPlant_CategoryViewController: UIViewController {
     @IBOutlet weak var txf_categoryName: UITextField!
     @IBOutlet weak var txf_categoryWeather: UITextField!
     
+    // The list of array to display. Can be changed dynamically
+    
     var gardenID:Int = 0
+    
+    var categoryID:String = ""
     
     let headers: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)","Accept":"aplication/json"]
     
@@ -47,6 +52,8 @@ class NewPlant_CategoryViewController: UIViewController {
         let spice = txf_plantSpice.text!
         let category = txf_plantCategory.text!
         
+        self.categoryID = category
+        
         if name.isEmpty || spice.isEmpty || category.isEmpty{
             let alertEmptyData = UIAlertController(title: "Campos vacios", message: "Porfavor completa todos los campos", preferredStyle: .alert)
             alertEmptyData.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alertAction) in
@@ -57,14 +64,36 @@ class NewPlant_CategoryViewController: UIViewController {
             }))
             self.present(alertEmptyData, animated: true, completion: nil)
         }else{
-            Alamofire.request("https://api-smart-garden.herokuapp.com/api/newFlowerpot", method: .post, parameters: ["name":name, "spice":spice,"garden":gardenID,"category":category], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
-                if let JSON = response.result.value{
-                    print(JSON)
-                    self.performSegue(withIdentifier: "plantAdded", sender: nil)
+            if categoryID == "Tropical"{
+                Alamofire.request("https://api-smart-garden.herokuapp.com/api/newFlowerpot", method: .post, parameters: ["name":name, "spice":spice,"garden":gardenID,"category":1], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                    if let JSON = response.result.value{
+                        print(JSON)
+                        self.performSegue(withIdentifier: "plantAdded", sender: nil)
+                    }
+                }
+            }else if categoryID == "Frio"{
+                Alamofire.request("https://api-smart-garden.herokuapp.com/api/newFlowerpot", method: .post, parameters: ["name":name, "spice":spice,"garden":gardenID,"category":2], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                    if let JSON = response.result.value{
+                        print(JSON)
+                        self.performSegue(withIdentifier: "plantAdded", sender: nil)
+                    }
+                }
+            }else if categoryID == "Seco"{
+                Alamofire.request("https://api-smart-garden.herokuapp.com/api/newFlowerpot", method: .post, parameters: ["name":name, "spice":spice,"garden":gardenID,"category":3], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                    if let JSON = response.result.value{
+                        print(JSON)
+                        self.performSegue(withIdentifier: "plantAdded", sender: nil)
+                    }
+                }
+            }else if categoryID == "Templado"{
+                Alamofire.request("https://api-smart-garden.herokuapp.com/api/newFlowerpot", method: .post, parameters: ["name":name, "spice":spice,"garden":gardenID,"category":4], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                    if let JSON = response.result.value{
+                        print(JSON)
+                        self.performSegue(withIdentifier: "plantAdded", sender: nil)
+                    }
                 }
             }
         }
-        
     }
     @IBAction func addNewCategory(_ sender: Any) {
         
