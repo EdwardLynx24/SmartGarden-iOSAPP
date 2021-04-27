@@ -53,6 +53,11 @@ class ProfileViewController: UIViewController {
             if state == true{
                 Alamofire.request("https://api-smart-garden.herokuapp.com/update", method: .put, parameters: ["id":id, "email":emailUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                     print(response)
+                    let alertSuccesEmail = UIAlertController(title: "Correo Actualizado", message: "Tu correo electronico ha cambiado satisfacoriamente a: "+emailUP, preferredStyle: .alert)
+                    alertSuccesEmail.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alertAction) in
+                        alertSuccesEmail.dismiss(animated: true, completion: nil)
+                    }))
+                    self.present(alertSuccesEmail, animated: true, completion: nil)
                 }
             }else{
                 let alertWrongEmail = UIAlertController(title: "Correo electronico invalido", message: "Verifica el correo electronico", preferredStyle: .alert)
@@ -66,20 +71,40 @@ class ProfileViewController: UIViewController {
         else if nombreUP.isEmpty && emailUP.isEmpty{
             Alamofire.request("https://api-smart-garden.herokuapp.com/update", method: .put, parameters: ["id":id, "lastName":apellidoUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                 print(response)
+                let alertSuccesLastName = UIAlertController(title: "Apellido Actualizado", message: "Tu apellido ha cambiado satisfacoriamente a: "+apellidoUP, preferredStyle: .alert)
+                alertSuccesLastName.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alertAction) in
+                    alertSuccesLastName.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alertSuccesLastName, animated: true, completion: nil)
             }
         }else if apellidoUP.isEmpty && emailUP.isEmpty{
             Alamofire.request("https://api-smart-garden.herokuapp.com/update", method: .put, parameters: ["id":id, "name":nombreUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                 print(response)
+                let alertSuccesName = UIAlertController(title: "Nombre Actualizado", message: "Tu nombre ha cambiado satisfacoriamente a: "+nombreUP, preferredStyle: .alert)
+                alertSuccesName.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alertAction) in
+                    alertSuccesName.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alertSuccesName, animated: true, completion: nil)
             }
         }else if emailUP.isEmpty{
             Alamofire.request("https://api-smart-garden.herokuapp.com/update", method: .put, parameters: ["id":id, "name":nombreUP,"lastName":apellidoUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                 print(response)
+                let alertSuccesNameLast = UIAlertController(title: "Nombre y apellido Actualizados", message: "Tu nombre ha cambiado satisfacoriamente a: "+nombreUP+" y apellido a: "+apellidoUP, preferredStyle: .alert)
+                alertSuccesNameLast.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alertAction) in
+                    alertSuccesNameLast.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alertSuccesNameLast, animated: true, completion: nil)
             }
         }else{
             let state = self.isValidEmail(emailUP)
             if state == true{
                 Alamofire.request("https://api-smart-garden.herokuapp.com/update", method: .put, parameters: ["id":id, "name":nombreUP,"lastName":apellidoUP,"email":emailUP], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
                     print(response)
+                    let alertSuccesAll = UIAlertController(title: "Datos Actualizados", message: "Tus datos han cambiado satisfactoriamente."+"Nombre: "+nombreUP+" Apellido:"+apellidoUP+" Correo: "+emailUP, preferredStyle: .alert)
+                    alertSuccesAll.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alertAction) in
+                        alertSuccesAll.dismiss(animated: true, completion: nil)
+                    }))
+                    self.present(alertSuccesAll, animated: true, completion: nil)
                 }
             }else{
                 let alertWrongEmail = UIAlertController(title: "Correo electronico invalido", message: "Verifica el correo electronico", preferredStyle: .alert)

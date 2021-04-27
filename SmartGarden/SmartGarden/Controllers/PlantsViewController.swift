@@ -39,7 +39,8 @@ class PlantsViewController: UIViewController {
         let headersnot401: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)", "Accept":"aplication/json"]
         Alamofire.request("https://api-smart-garden.herokuapp.com/logout", method: .post, parameters: ["Authentication":App.shared.tokensaved],headers: headersnot401).responseJSON{(response) -> Void in
             print(response)
-            if let JSON = response.request?.value{
+            if let JSON = response.result.value{
+                print(JSON)
                 self.performSegue(withIdentifier: "logOut", sender: nil)
             }else{
                 let alertwronglogout = UIAlertController(title: "Fallo el Logout", message: "Token Incorrecto", preferredStyle: .alert)
@@ -68,7 +69,7 @@ class PlantsViewController: UIViewController {
         
         print("Bob me llamo compi")
         print("Che mugrero \(self.gardenID)")
-        Alamofire.request("https://api-smart-garden.herokuapp.com/api/Flowerpot/showByGarden?garden=\(self.gardenID)", method: .get, headers:headers).responseData(completionHandler: {(response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/api/Flowerpot/showByGarden?garden=\(self.gardenID)", method: .get, headers:self.headers).responseData(completionHandler: {(response) in
             guard let data = response.value else { return }
             do{
                 let decoder = try JSONDecoder().decode([Planta].self , from: data)

@@ -10,11 +10,12 @@ import Foundation
 
 struct User: Decodable{
     
-    //static var userShared = User()
+    let email:String
+    let password:String
     
-    let name: String
-    let lastName:String
-    let email: String
-    let password: String
+    init(_ email:String, _ password:String){
+        self.email = email
+        self.password = password
+    }
     
 }

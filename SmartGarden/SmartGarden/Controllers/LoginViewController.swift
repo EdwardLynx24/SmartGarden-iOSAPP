@@ -1,4 +1,3 @@
-//
 //  LoginViewController.swift
 //  SmartGarden
 //
@@ -10,11 +9,13 @@ import UIKit
 import Alamofire
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var txf_mail: UITextField!
     @IBOutlet weak var txf_pass: UITextField!
     
     let token = UserDefaults.standard
+    
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class LoginViewController: UIViewController {
     func verify(){
         let txfmail = txf_mail.text!
         let txfpass = txf_pass.text!
-//Verificar que los campos no esten vacios
+        //Verificar que los campos no esten vacios
         if txfmail.isEmpty || txfpass.isEmpty{
             let alertEmptyString = UIAlertController(title: "Faltan Datos", message: "Alguno de los campos estan vacios", preferredStyle: .alert)
             alertEmptyString.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(alertAction) in alertEmptyString.dismiss(animated: true, completion: nil)}))
@@ -40,32 +41,35 @@ class LoginViewController: UIViewController {
             debugPrint("No funciono login")
             return
         }
-//Datos de login correctos
+            //Datos de login correctos
         else{
-            Alamofire.request("https://api-smart-garden.herokuapp.com/login", method: .post, parameters: ["email":txfmail,"password":txfpass]).responseData { (response) in
-                do {
-                    guard let data = response.value else { return }
-                    let decoder = JSONDecoder()
-                    let auth = try decoder.decode(Auth.self, from: data)
-                    //print(auth.token)
-                    self.token.set(auth.token, forKey: "auth")
-                    self.token.synchronize()
-                    //print("Holaaa")
-                    //print(auth)
-                    App.shared.tokensaved = auth.token
-                    //print("Hola soy: "+App.shared.tokensaved)
-                    //var tokenStored = self.getTokenStored()
-                    //tokenStored?.append()
-                    
-                    self.performSegue(withIdentifier: "LoginSuccessfull", sender: nil)
-                }catch {
-                    print("Error en la serializacion \(error):")
-                    let alertWrongLogin = UIAlertController(title: "Error de Login", message: "Verifica que los datos sean correctos", preferredStyle: .alert)
-                    alertWrongLogin.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(alertAction) in alertWrongLogin.dismiss(animated: true, completion: nil)}))
-                    self.present(alertWrongLogin, animated: true, completion: nil)
-                    self.token.removeObject(forKey: "auth")
-                }
+            self.logIn()
+        }
+    }
+    func logIn(){
+        let txfmail = txf_mail.text!
+        let txfpass = txf_pass.text!
+        
+        Alamofire.request("https://api-smart-garden.herokuapp.com/login", method: .post, parameters: ["email":txfmail,"password":txfpass]).responseData { (response) in
+            do {
+                
+                guard let data = response.value else { return }
+                let decoder = JSONDecoder()
+                let auth = try decoder.decode(Auth.self, from: data)
+                //print(auth.token)
+                self.token.set(auth.token, forKey: "auth")
+                self.token.synchronize()
+                App.shared.tokensaved = auth.token
+                
+                self.performSegue(withIdentifier: "LoginSuccessfull", sender: nil)
+            }catch {
+                print("Error en la serializacion \(error):")
+                let alertWrongLogin = UIAlertController(title: "Error de Login", message: "Verifica que los datos sean correctos", preferredStyle: .alert)
+                alertWrongLogin.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(alertAction) in alertWrongLogin.dismiss(animated: true, completion: nil)}))
+                self.present(alertWrongLogin, animated: true, completion: nil)
+                self.token.removeObject(forKey: "auth")
             }
         }
+        
     }
 }

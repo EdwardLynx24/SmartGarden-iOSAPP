@@ -12,7 +12,6 @@ import Alamofire
 class NewSensorViewController: UIViewController {
 
     @IBOutlet weak var txf_nombre: UITextField!
-    @IBOutlet weak var txf_pines: UITextField!
     @IBOutlet weak var txf_tipo: UITextField!
     
     let headers: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)","Accept":"aplication/json"]
@@ -26,10 +25,9 @@ class NewSensorViewController: UIViewController {
     }
     func addSensor(){
         let nombre = txf_nombre.text!
-        let pines = txf_pines.text!
         let tipo = txf_tipo.text!
         
-        Alamofire.request("https://api-smart-garden.herokuapp.com/api/newSensor", method: .post, parameters: ["name":nombre, "pins":pines, "type":tipo], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+        Alamofire.request("https://api-smart-garden.herokuapp.com/api/newSensor", method: .post, parameters: ["name":nombre, "type":tipo], encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             if let JSON = response.result.value{
                 print(JSON)
                 self.performSegue(withIdentifier: "sensorAdded", sender: nil)

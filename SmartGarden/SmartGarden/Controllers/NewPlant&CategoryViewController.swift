@@ -32,7 +32,6 @@ class NewPlant_CategoryViewController: UIViewController {
         super.viewDidLoad()
 
         btn_newPlant.layer.cornerRadius = 15
-        btn_newCategory.layer.cornerRadius = 15
         
         print("ID compi: \(self.gardenID)")
     }
@@ -92,6 +91,12 @@ class NewPlant_CategoryViewController: UIViewController {
                         self.performSegue(withIdentifier: "plantAdded", sender: nil)
                     }
                 }
+            }else{
+                let alertInvalidCategory = UIAlertController(title: "Categoria Invalida", message: "Porfavor introduce una categoria valida", preferredStyle: .alert)
+                alertInvalidCategory.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alertAction) in
+                    alertInvalidCategory.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alertInvalidCategory, animated: true, completion: nil)
             }
         }
     }

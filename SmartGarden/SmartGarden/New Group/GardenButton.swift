@@ -51,12 +51,12 @@ final class GardenButton: UIButton {
         return lb_created_at
     }()
     
-    private let image: UIImage = {
+    /*private let image: UIImage = {
         var img_image = UIImage()
         img_image = UIImage(named: "plantas 2.png")!
         img_image.alignmentRectInsets.right
         return img_image
-    }()
+    }()*/
     
     override init(frame:CGRect){
         super.init(frame: frame)

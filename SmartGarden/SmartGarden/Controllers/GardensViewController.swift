@@ -53,6 +53,7 @@ class GardensViewController: UIViewController {
             print(response)
             if let JSON = response.request?.value{
                 self.performSegue(withIdentifier: "logOut", sender: nil)
+                print(JSON)
             }else{
                 let alertwronglogout = UIAlertController(title: "Fallo el Logout", message: "Token Incorrecto", preferredStyle: .alert)
                 alertwronglogout.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(alertAction) in
