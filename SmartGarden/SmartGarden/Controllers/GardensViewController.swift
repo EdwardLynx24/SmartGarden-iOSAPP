@@ -52,6 +52,7 @@ class GardensViewController: UIViewController {
         Alamofire.request("https://api-smart-garden.herokuapp.com/logout", method: .post, parameters: ["Authentication":App.shared.tokensaved],headers: headersnot401).responseJSON{(response) -> Void in
             print(response)
             if let JSON = response.request?.value{
+                self.defaults.removeObject(forKey: "users")
                 self.performSegue(withIdentifier: "logOut", sender: nil)
                 print(JSON)
             }else{

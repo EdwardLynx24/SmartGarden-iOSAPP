@@ -14,6 +14,7 @@ class PlantsViewController: UIViewController {
     @IBOutlet weak var btn_new_plant: UIButton!
     
     var gardenID:Int = 0
+    let defaults = UserDefaults.standard
     
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -40,6 +41,7 @@ class PlantsViewController: UIViewController {
         Alamofire.request("https://api-smart-garden.herokuapp.com/logout", method: .post, parameters: ["Authentication":App.shared.tokensaved],headers: headersnot401).responseJSON{(response) -> Void in
             print(response)
             if let JSON = response.result.value{
+                self.defaults.removeObject(forKey: "users")
                 print(JSON)
                 self.performSegue(withIdentifier: "logOut", sender: nil)
             }else{
