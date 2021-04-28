@@ -10,10 +10,10 @@ import Foundation
 
 class Info:Codable{
     
-    var humidity:String
-    var temperature:String
+    var humidity:Int
+    var temperature:Int
     
-    internal init(humidity:String,temperature:String){
+    init(humidity:Int,temperature:Int){
         self.humidity = humidity
         self.temperature = temperature
     }

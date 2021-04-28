@@ -54,25 +54,34 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     }
     
     @IBAction func regar(_ sender: Any) {
-        
-        self.onAction(string: "Regar")
+        print("Soy regar")
+        self.onAction(string: "regar"){
+            print("jalo")
+        }
         
     }
     
-    func onAction(string:String){
-        let params = ["t":7,"d":["topic":"chat","event":"message","data":["order":string, "plantID":self.plantID]]] as [String : Any]
+    func onAction(string:String, completion: @escaping ()->()){
+        print("Soy action :D")
+        let params = ["t":7,"d":["topic":"measures","event":"message","data":["order":string, "plantID":self.plantID]]] as [String : Any]
         guard JSONSerialization.isValidJSONObject(params) else { fatalError("JSON Invalid") }
         do{
             let data = try JSONSerialization.data(withJSONObject: params)
-            socket.write(data: data)
+            print(data)
+            socket.write(data: data){
+                completion()
+            }
         }catch{
             print(error)
+            print("No jalo la peticion de mandar un action")
         }
     }
     
     @IBAction func iluminar(_ sender: Any) {
-        
-        self.onAction(string: "Iluminar")
+        print("Soy iluminar")
+        self.onAction(string: "iluminar"){
+            print("Jalo")
+        }
         
     }
     func wsConector(){
@@ -88,12 +97,12 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     func onReceivedData(_ d:String){
         if let data = d.data(using: .utf8){
             let decoder = JSONDecoder()
-            
+            print("Vamos a decodificar la vaina")
             do{
                 let wsobject = try decoder.decode(wsDataRecived.self, from: data)
-                print(wsobject.d.data)
-                self.lb_humidy.text = wsobject.d.data.humidity
-                self.lb_temp.text = wsobject.d.data.temperature
+                print(wsobject.d.data.temperature,wsobject.d.data.humidity)
+                self.lb_temp.text = String(wsobject.d.data.temperature)+" ºC"
+                self.lb_humidy.text = String(wsobject.d.data.humidity)+" %"
             }catch{
                 print("Decoder error")
             }
@@ -121,11 +130,11 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     }
     
     func wsTopic(completion: @escaping ()->()){
-        let params = ["t":1,"d":["topic":"measures"]] as [String : Any]
-        guard JSONSerialization.isValidJSONObject(params) else { fatalError("JSON Invalid") }
+        let paramsTopic = ["t":1,"d":["topic":"measures"]] as [String : Any]
+        guard JSONSerialization.isValidJSONObject(paramsTopic) else { fatalError("JSON Invalid") }
         do{
-            let data = try JSONSerialization.data(withJSONObject: params)
-            socket.write(data: data) {
+            let dataTopic = try JSONSerialization.data(withJSONObject: paramsTopic)
+            socket.write(data: dataTopic) {
                 completion()
             }
         }catch{
@@ -146,9 +155,5 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
                 print("Error: \(error)")
             }
         }
-        
     }
-    
-    
-
 }

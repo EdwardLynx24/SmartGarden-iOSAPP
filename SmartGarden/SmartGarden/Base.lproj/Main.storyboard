@@ -986,11 +986,11 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wo7-LR-FGL">
-                                <rect key="frame" x="35" y="55" width="102" height="52"/>
+                                <rect key="frame" x="35" y="55" width="48" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="e2F-35-mfg"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="image 5.png"/>
+                                <state key="normal" image="image 5.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7U-xM-cBJ">
                                 <rect key="frame" x="360" y="63" width="32" height="35"/>
@@ -1764,7 +1764,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="7qc-XD-lHa"/>
         <segue reference="t14-T5-AbX"/>
-        <segue reference="mEf-P6-gRf"/>
+        <segue reference="2kh-d3-uw8"/>
         <segue reference="HYs-5n-CWO"/>
         <segue reference="jyG-tY-Ft0"/>
         <segue reference="8o2-23-DxY"/>

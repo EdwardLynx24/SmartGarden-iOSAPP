@@ -13,4 +13,5 @@ class DataWS: Codable {
     init(data:Info){
         self.data = data
     }
+
 }
