@@ -60,21 +60,13 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
         }
         
     }
-    
+
     func onAction(string:String, completion: @escaping ()->()){
         print("Soy action :D")
-        let params = ["t":7,"d":["topic":"measures","event":"message","data":["order":string, "plantID":self.plantID]]] as [String : Any]
-        guard JSONSerialization.isValidJSONObject(params) else { fatalError("JSON Invalid") }
-        do{
-            let data = try JSONSerialization.data(withJSONObject: params)
-            print(data)
-            socket.write(data: data){
-                completion()
-            }
-        }catch{
-            print(error)
-            print("No jalo la peticion de mandar un action")
-        }
+        let params = ["t":7,"d":["topic":"measures","event":"message","data":["order":string,"plantID":self.plantID]]] as [String : Any]
+        let msg = "{\"t\":7,\"d\":{\"topic\":\"measures\",\"event\":\"message\",\"data\":{\"order\":string,\"plantID\":self.plantID}}}"
+        socket.write(string: msg)
+        self.jsonToString(json: params as AnyObject)
     }
     
     @IBAction func iluminar(_ sender: Any) {
@@ -155,5 +147,18 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
                 print("Error: \(error)")
             }
         }
+    }
+    
+    func jsonToString(json: AnyObject){
+        do {
+            let data1 =  try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted) // first of all convert json to the data
+            let convertedString = String(data: data1, encoding: String.Encoding.utf8) // the data will be converted to the string
+            print(convertedString!)
+            socket.write(string:convertedString!)// <-- here is ur string
+            
+        } catch let myJSONError {
+            print(myJSONError)
+        }
+        
     }
 }
