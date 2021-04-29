@@ -64,7 +64,8 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     func onAction(string:String, completion: @escaping ()->()){
         print("Soy action :D")
         let params = ["t":7,"d":["topic":"measures","event":"message","data":["order":string,"plantID":self.plantID]]] as [String : Any]
-        let msg = "{\"t\":7,\"d\":{\"topic\":\"measures\",\"event\":\"message\",\"data\":{\"order\":string,\"plantID\":self.plantID}}}"
+        let msg = "{\"t\":7,\"d\":{\"topic\":\"measures\",\"event\":\"message\",\"data\":{\"order\":\(string),\"plantID\":\(self.plantID)}}}"
+        print("String o JSON: \(msg)")
         socket.write(string: msg)
         self.jsonToString(json: params as AnyObject)
     }
@@ -113,6 +114,8 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
         print("Mensajito papu: \(text)")
+        let msg = "{\"t\":7,\"d\":{\"topic\":\"measures\",\"event\":\"message\",\"data\":{\"order\":string,\"plantID\":self.plantID}}}"
+        print("String o JSON: \(msg)")
         self.onReceivedData(text)
         
     }
