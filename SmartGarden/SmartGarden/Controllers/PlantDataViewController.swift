@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import Starscream
 
-class PlantDataViewController: UIViewController,WebSocketDelegate{
+class PlantDataViewController: UIViewController,WebSocketDelegate,WebSocketPongDelegate{
     
     private var socket: WebSocket! = nil
     
@@ -30,7 +30,13 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
         getPlantData()
         self.wsConector()
         print(self.gardenID)
-        // Do any additional setup after loading the view.
+        DispatchQueue.global().async {
+            self.ping()
+            sleep(300)
+            while true{
+                
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,6 +48,8 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
             destino.gardenID = self.gardenID
         }
     }
+    
+    
     
     @IBAction func eliminarPlanta(_ sender: Any) {
         //dropPlant
@@ -83,6 +91,7 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
         socket.delegate = self
+        socket.pongDelegate = self
         socket.connect()
         
     }
@@ -109,7 +118,12 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
     }
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
-        return
+        print("Adios guapo")
+    }
+    
+    func websocketDidReceivePong(socket: WebSocketClient, data: Data?) {
+        print("Got pong! Maybe some data: \(String(describing: data?.count))")
+        //self.ping()
     }
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
@@ -117,6 +131,7 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
         let msg = "{\"t\":7,\"d\":{\"topic\":\"measures\",\"event\":\"message\",\"data\":{\"order\":string,\"plantID\":self.plantID}}}"
         print("String o JSON: \(msg)")
         self.onReceivedData(text)
+        self.ping()
         
     }
     
@@ -162,6 +177,16 @@ class PlantDataViewController: UIViewController,WebSocketDelegate{
         } catch let myJSONError {
             print(myJSONError)
         }
-        
+    }
+    
+    @objc func ping(){
+        let paramsPing = ["t":8] as [String : Any]
+        guard JSONSerialization.isValidJSONObject(paramsPing) else { fatalError("JSON Invalid") }
+        do{
+            let dataPing = try JSONSerialization.data(withJSONObject: paramsPing)
+            socket.write(data: dataPing)
+        }catch{
+            print(error)
+        }
     }
 }
