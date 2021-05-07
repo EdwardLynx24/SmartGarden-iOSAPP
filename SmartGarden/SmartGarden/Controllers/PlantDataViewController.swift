@@ -13,9 +13,13 @@ import Starscream
 class PlantDataViewController: UIViewController,WebSocketDelegate,WebSocketPongDelegate{
     
     private var socket: WebSocket! = nil
+    var state:Bool = false
+    var status:Bool = false
     
     let headers: HTTPHeaders = ["Authorization":"Bearer \(App.shared.tokensaved)","Accept":"aplication/json"]
     
+    @IBOutlet weak var lb_Regar: UILabel!
+    @IBOutlet weak var lb_Calor: UILabel!
     @IBOutlet weak var lb_temp: UILabel!
     @IBOutlet weak var lb_humidy: UILabel!
     @IBOutlet weak var lb_plantName: UILabel!
@@ -30,6 +34,7 @@ class PlantDataViewController: UIViewController,WebSocketDelegate,WebSocketPongD
         getPlantData()
         self.wsConector()
         print(self.gardenID)
+        self.lb_Calor.text = "Foco: Apagado"
         DispatchQueue.global().async {
             self.ping()
             sleep(300)
@@ -63,6 +68,11 @@ class PlantDataViewController: UIViewController,WebSocketDelegate,WebSocketPongD
     
     @IBAction func regar(_ sender: Any) {
         print("Soy regar")
+        let alertRegada = UIAlertController(title: "Planta Regada", message: "Tu planta ha sido regada.", preferredStyle: .alert)
+        alertRegada.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (alertAction) in
+            alertRegada.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alertRegada, animated: true, completion: nil)
         self.onAction(string: "regar"){
             print("jalo")
         }
@@ -80,10 +90,21 @@ class PlantDataViewController: UIViewController,WebSocketDelegate,WebSocketPongD
     
     @IBAction func iluminar(_ sender: Any) {
         print("Soy iluminar")
-        self.onAction(string: "iluminar"){
-            print("Jalo")
+        self.state = !self.state
+        print(self.state)
+        if self.state == true{
+            self.onAction(string: "iluminar") {
+                print(self.state)
+                print("Encender")
+            }
+            self.lb_Calor.text = String("Foco: Encendido")
+        }else if self.state == false{
+            self.onAction(string: "apagar") {
+                print(self.state)
+                print("Apagar")
+            }
+            self.lb_Calor.text = String("Foco: Apagado")
         }
-        
     }
     func wsConector(){
         
@@ -123,7 +144,7 @@ class PlantDataViewController: UIViewController,WebSocketDelegate,WebSocketPongD
     
     func websocketDidReceivePong(socket: WebSocketClient, data: Data?) {
         print("Got pong! Maybe some data: \(String(describing: data?.count))")
-        //self.ping()
+        self.ping()
     }
     
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String) {
